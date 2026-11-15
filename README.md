@@ -6,6 +6,8 @@
 
 *"Felix, qui potuit rerum cognoscere causas."* — Virgil, *Georgics* II
 
+<img src="Aletheion_Logo_Color.png" alt="Aletheion Logo" width="100%">
+
 ![Status](https://img.shields.io/badge/status-early%20development-orange)
 ![Guidelines](https://img.shields.io/badge/guidelines-v1.0-blue)
 ![Python](https://img.shields.io/badge/python-3.13%20%C2%B7%20stdlib--first-3776AB)
