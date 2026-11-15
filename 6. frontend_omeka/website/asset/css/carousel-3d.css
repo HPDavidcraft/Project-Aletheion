@@ -1,0 +1,558 @@
+/* =========================================
+   3D RADIAL CAROUSEL GALLERY
+   Concave arc layout with physics-based navigation
+   ========================================= */
+
+.radial-carousel-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff9f2 0%, var(--pleroma-offwhite) 100%);
+  padding: 120px 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.evidence-gallery-intro {
+  position: relative;
+  z-index: 101;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  color: var(--pleroma-black);
+  text-align: center;
+}
+
+.evidence-gallery-intro h2 {
+  margin: 0.4rem 0 0.75rem;
+  color: var(--pleroma-black);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.evidence-gallery-intro p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Carousel Container */
+.radial-carousel-container {
+  position: relative;
+  width: min(78%, 1120px);
+  margin-inline: auto;
+  height: 70vh;
+  perspective: 2000px;
+  perspective-origin: 50% 50%;
+}
+
+.radial-carousel-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.05s linear;
+}
+
+/* Individual Carousel Cards */
+.carousel-card {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -250px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: inherit;
+  appearance: none;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 0.6s ease,
+              filter 0.6s ease;
+  backface-visibility: visible;
+}
+
+.carousel-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  background: var(--pleroma-offwhite);
+  display: block;
+}
+
+.carousel-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: var(--pleroma-black);
+}
+
+.carousel-card__expand-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 0.45rem 0.7rem;
+  color: #fff9f2;
+  background: rgba(52, 46, 24, 0.92);
+  border: 1px solid var(--pleroma-warm);
+  font: 600 0.75rem/1.2 system-ui, sans-serif;
+}
+
+.carousel-card:focus-visible {
+  outline: 3px solid var(--pleroma-warm);
+  outline-offset: 6px;
+}
+
+/* Hero card (center) - brightest */
+.carousel-card.is-hero {
+  z-index: 10000;
+  filter: brightness(1) blur(0px);
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Maximize placeholder button on each card */
+.carousel-card__max-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent; /* Remove the black oval background */
+  color: var(--pleroma-offwhite);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  padding: 4px; /* Small padding for clickability */
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.carousel-card__max-btn:hover {
+  background: transparent; /* Keep transparent on hover */
+  transform: scale(1.1);
+}
+
+.carousel-card__max-btn i { font-size: 14px; }
+
+/* Side cards - dimmed and blurred (still clickable) */
+.carousel-card:not(.is-hero) {
+  filter: brightness(0.6) blur(2px);
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+/* Dynamic Title Display */
+.carousel-title-display {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 101;
+  pointer-events: none;
+}
+
+.carousel-active-title {
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--thm-black);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-active-location {
+  font-family: var(--thm-font), sans-serif;
+  font-size: 1rem;
+  color: #666;
+  letter-spacing: 0.1em;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Fullscreen Modal Overlay */
+.carousel-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.carousel-modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.modal-open .site-header,
+body.modal-open [data-gallery-image] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.carousel-modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-modal-image {
+  position: absolute;
+  width: calc(100% - 30vw);
+  height: 100%;
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-modal-overlay.is-active .carousel-modal-image {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+/* Infographic Panel */
+.carousel-infographic-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30vw;
+  min-width: 320px;
+  max-width: 500px;
+  background: rgba(52, 46, 24, 0.97);
+  backdrop-filter: blur(20px);
+  padding: 60px 40px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 2001;
+  color: var(--pleroma-offwhite);
+  box-shadow: 6px 0 28px rgba(0,0,0,0.28);
+}
+
+.carousel-modal-overlay.is-active .carousel-infographic-panel {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.infographic-title {
+  font-family: var(--thm-font-two), serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--pleroma-offwhite);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.infographic-location {
+  font-family: var(--thm-font), sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.1em;
+  margin: 0 0 32px;
+  text-transform: uppercase;
+}
+
+.infographic-body {
+  font-family: var(--thm-font), sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+.gallery-panel-label {
+  margin: 1.5rem 0 1rem;
+  color: var(--pleroma-warm);
+  font: 700 0.72rem/1.4 system-ui, sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.gallery-placeholder-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.25rem;
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(244,244,240,0.28);
+  font-size: 0.85rem;
+}
+
+.gallery-placeholder-fields dt {
+  margin-top: 0.6rem;
+  color: #d7bb7f;
+  font-weight: 700;
+}
+
+.gallery-placeholder-fields dd {
+  margin: 0;
+  color: rgba(244,244,240,0.85);
+}
+
+.gallery-guideline-note {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border-left: 3px solid var(--pleroma-warm);
+  background: rgba(255,249,242,0.08);
+  color: rgba(244,244,240,0.82);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.carousel-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 4;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--pleroma-warm);
+  border-radius: 3px;
+  color: #fff9f2;
+  background: var(--pleroma-black);
+  font: 600 0.8rem/1.2 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.carousel-gallery-controls {
+  position: fixed;
+  right: 24px;
+  bottom: 20px;
+  z-index: 2005;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.carousel-gallery-controls button {
+  min-width: 82px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--pleroma-warm);
+  border-radius: 3px;
+  color: #fff9f2;
+  background: var(--pleroma-black);
+  font: 600 0.82rem/1.2 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.carousel-gallery-controls button:hover,
+.carousel-modal-close:hover {
+  color: var(--pleroma-black);
+  background: var(--pleroma-warm);
+}
+
+.carousel-gallery-controls button:focus-visible,
+.carousel-modal-close:focus-visible {
+  outline: 3px solid #fff9f2;
+  outline-offset: 3px;
+}
+
+.infographic-body p {
+  margin: 0 0 16px;
+}
+
+/* Interaction Zones (invisible, cursor hints only) */
+.carousel-zone {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 2002;
+  cursor: pointer;
+}
+
+.carousel-zone-prev {
+  left: 30vw; /* Start after infographic panel */
+  width: 20%;
+}
+
+.carousel-zone-center {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+}
+
+.carousel-zone-next {
+  right: 0;
+  width: 25%;
+}
+
+/* Custom cursor for modal zones */
+.carousel-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.carousel-modal-overlay.is-active .carousel-cursor {
+  opacity: 1;
+}
+
+.carousel-cursor__text {
+  color: var(--pleroma-offwhite);
+  font-family: var(--thm-font), sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Scrollbar for infographic */
+.carousel-infographic-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.carousel-infographic-panel::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+}
+
+.carousel-infographic-panel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+}
+
+.carousel-infographic-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-card {
+    width: 320px;
+    height: 400px;
+    margin-left: -160px;
+    margin-top: -200px;
+  }
+  
+  .carousel-infographic-panel {
+    width: 40vw;
+    cursor: pointer;
+  }
+
+  .carousel-modal-close {
+    top: 8px;
+    right: 12px;
+  }
+
+  .carousel-gallery-controls {
+    right: 12px;
+    bottom: 12px;
+  }
+  
+  .carousel-modal-image {
+    width: calc(100% - 40vw);
+  }
+  
+  /* Adjust zones for tablet */
+  .carousel-zone-prev {
+    left: 40vw;
+    width: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .radial-carousel-section {
+    padding: 80px 0;
+  }
+  
+  .radial-carousel-container {
+    width: 100%;
+    height: 60vh;
+  }
+  
+  .carousel-card {
+    width: 280px;
+    height: 350px;
+    margin-left: -140px;
+    margin-top: -175px;
+  }
+  
+  .carousel-title-display {
+    bottom: 40px;
+  }
+  
+  .carousel-active-title {
+    font-size: 2rem;
+  }
+  
+  .carousel-infographic-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 40px 24px;
+    bottom: 0;
+    top: auto;
+    height: 50vh;
+  }
+
+  .carousel-gallery-controls {
+    right: 12px;
+    top: calc(50vh - 52px);
+    bottom: auto;
+  }
+  
+  .carousel-modal-image {
+    width: 100%;
+    height: 50vh;
+    top: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  
+  .carousel-modal-overlay.is-active .carousel-modal-image {
+    transform: translateY(0) scale(1);
+  }
+  
+  /* Mobile: simpler zone layout since infographic is full-width */
+  .carousel-zone-prev {
+    left: 0;
+    width: 25%;
+    z-index: 2003; /* Above infographic on mobile */
+  }
+  
+  .carousel-zone-center {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+  }
+  
+  .carousel-zone-next {
+    right: 0;
+    width: 25%;
+  }
+}

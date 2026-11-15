@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLEROMA - The Spatiotemporal Engine for Total History</title>
+  <link rel="stylesheet" href="../asset/css/site-header.css">
+  <link rel="stylesheet" href="../asset/css/alt-home-page.css">
+  <link rel="stylesheet" href="../asset/css/carousel-3d.css">
+<link rel="stylesheet" href="../asset/css/alt-home-element-styles.css">
+  <link rel="stylesheet" href="../asset/css/project-palette.css">
+  <script src="../asset/js/alt-home-intro-state.js"></script>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+  ============================================ -->
+  <div id="preloader">
+    <div id="preloader-logo">PLEROMA</div>
+    <div id="preloader-title">
+      <h1>THE SPATIOTEMPORAL ENGINE</h1>
+      <p>FOR TOTAL HISTORY</p>
+    </div>
+    <p id="preloader-subtitle">PROJECT ALETHEION</p>
+    <div class="loading-dots">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header site-header--home">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="alt_home.html" aria-label="Project Aletheion home">
+        <img src="../asset/img/Project_Aletheion.png" alt="Project Aletheion">
+      </a>
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="site-header__links">
+          <li><a href="alt_home.html" aria-current="page"><img class="site-header__icon" src="../asset/img/home.png" alt="">Home</a></li>
+          <li><a href="about_us.html"><img class="site-header__icon" src="../asset/img/logo-top.png" alt="">About</a></li>
+          <li><a href="archaeology.html"><img class="site-header__icon" src="../asset/img/archeology.png" alt="">Archaeology</a></li>
+          <li><a href="history.html"><img class="site-header__icon" src="../asset/img/history.png" alt="">History</a></li>
+          <li><a href="linguistics.html"><img class="site-header__icon" src="../asset/img/linguistics.png" alt="">Linguistics</a></li>
+          <li><a href="religion.html"><img class="site-header__icon" src="../asset/img/religion.png" alt="">Religion</a></li>
+          <li><a href="science.html"><img class="site-header__icon" src="../asset/img/science.png" alt="">Science</a></li>
+          <li><a href="society.html"><img class="site-header__icon" src="../asset/img/society.png" alt="">Society</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <form class="site-header__search" role="search" id="quick-search-form">
+          <label class="visually-hidden" for="quick-search">Quick search this demo</label>
+          <input id="quick-search" name="q" type="search" placeholder="Quick search">
+          <button type="submit">Search</button>
+        </form>
+        <button class="site-header__tool-button" type="button" data-demo-control="language">
+          <img src="../asset/img/lang.png" alt=""> EN
+        </button>
+        <button class="site-header__tool-button" type="button" data-demo-control="login">
+          <img src="../asset/img/login.png" alt=""> Log in
+        </button>
+        <span class="site-header__status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- header torn edge moved to CSS pseudo-element; no DOM image -->
+  <!-- ============================================
+       HERO SECTION
+  ============================================ -->
+  <section id="hero" class="section-tear section-colored">
+    <div id="hero-bg"></div>
+    <div id="hero-image" class="parallax-layer" data-depth="0.05"></div>
+    <div class="hero-grid"></div>
+
+    <!-- Floating Annotations -->
+    <div class="parallax-layer hero-annotation" data-depth="0.15" id="pleroma-style-alt-home-001">
+      <p>DEMO IMAGE</p>
+      <p>No linked Pleroma record</p>
+    </div>
+
+    <div class="parallax-layer" data-depth="-0.12" id="pleroma-style-alt-home-002">
+      <div class="stamp">Uncertainty: not evaluated</div>
+    </div>
+
+    <div class="parallax-layer" data-depth="0.1" id="pleroma-style-alt-home-003">
+      <p id="pleroma-style-alt-home-004">
+        Example period only; not a record date
+      </p>
+    </div>
+
+    <div class="parallax-layer hero-stat" data-depth="-0.15" id="pleroma-style-alt-home-005">
+      <p>DEMO</p>
+      <p>Local placeholder media</p>
+    </div>
+
+    <div id="hero-content">
+      <p class="subtitle">PROJECT ALETHEION</p>
+      <h1>THE SPATIOTEMPORAL<br><span>ENGINE</span></h1>
+      <p class="tagline">FOR TOTAL HISTORY</p>
+      <div class="hero-line"></div>
+    </div>
+
+    <div class="scroll-indicator">
+      <p>SCROLL TO EXPLORE</p>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="demo-banner" role="note">
+    <strong>FICTIONAL PLEROMA DEMO</strong>
+    <span>All site names, records, dates, counts, interpretations, charts, and timelines here are invented for interface testing—not archaeological evidence. The method notes describe general research principles, not findings about these fictional examples.</span>
+  </div>
+
+    <!-- ============================================
+      SCROLL PHOTO SECTION
+    ============================================ -->
+    <section id="scroll-photo" class="section-tear section-colored">
+    <div class="scroll-photo-sticky">
+      <div class="scroll-photo-image" id="scale-photo">
+        <div class="placeholder">
+        </div>
+      </div>
+      <div class="scroll-overlay-text" id="overlay-text">
+        <h2>THE EVIDENCE LAYER</h2>
+        <p>Evidence can support multiple interpretations. This demo uses local media placeholders and does not preserve canonical records.</p>
+      </div>
+    </div>
+    
+  </section>
+
+    <!-- ============================================
+      TORN PAPER / ABOUT SECTION
+    ============================================ -->
+    <section id="about" class="section-tear section-white">
+    <!-- The first photo strip follows the full scroll-photo section. -->
+    <div class="collage-layer collage-after-scroll">
+      <button class="collage-wrap collage-1" type="button" data-gallery-image data-title="Demo image: stone structure" data-location="Location not catalogued" data-description="Local demo image only; no Pleroma entity, rights statement, citation, or provenance record is linked." aria-label="View demo image of a stone structure" id="pleroma-style-alt-home-006">
+        <img src="../asset/img/floating-images/Stonehenge-example-post-and-lintel-construction.webp" class="collage-item" alt="Demo image of a stone structure">
+      </button>
+      <button class="collage-wrap collage-2" type="button" data-gallery-image data-title="Demo image: artifact" data-location="Location not catalogued" data-description="Local demo image only; catalog description, date, place, rights, and provenance have not been supplied." aria-label="View unlinked artifact demo image" id="pleroma-style-alt-home-007">
+        <img src="../asset/img/floating-images/107404001.jpg" class="collage-item" alt="Unlinked artifact demo image">
+      </button>
+      <button class="collage-wrap collage-4" type="button" data-gallery-image data-title="Demo image: ancient architecture" data-location="Location not catalogued" data-description="Local demo image only; no canonical record or verified attribution is attached." aria-label="View ancient architecture demo image" id="pleroma-style-alt-home-008">
+        <img src="../asset/img/floating-images/Colosseo_2020.jpg.webp" class="collage-item" alt="Ancient architecture demo image">
+      </button>
+      <button class="collage-wrap" type="button" data-gallery-image data-title="Demo image: archaeological landscape" data-location="Location not catalogued" data-description="Local demo image only; no canonical Pleroma record or provenance is attached." aria-label="View archaeological landscape demo image" id="pleroma-style-alt-home-009">
+        <img src="../asset/img/gobekli-tepe.jpg" class="collage-item" alt="Archaeological landscape demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: archer figure" data-location="Location not catalogued" data-description="Local demo image only; object identification, date, rights, and provenance have not been verified." aria-label="View archer figure demo image">
+        <img src="../asset/img/floating-images/1-Archer.jpg" class="collage-item" alt="Archer figure demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: painted amphora" data-location="Location not catalogued" data-description="Local demo image only; attribution, date, source, rights, and provenance are placeholders." aria-label="View painted amphora demo image">
+        <img src="../asset/img/floating-images/003-CEGR3001085-ancient-greek-black-figure-panathenaic-amphora_other_top_1080x.webp" class="collage-item" alt="Painted amphora demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: inscribed tablet" data-location="Location not catalogued" data-description="Local demo image only; transcription, date, rights, and provenance have not been supplied." aria-label="View inscribed tablet demo image">
+        <img src="../asset/img/floating-images/23.10.1_EGDP010721.jpg" class="collage-item" alt="Inscribed tablet demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: archival photograph" data-location="Location not catalogued" data-description="Local demo image only; subject, date, source, rights, and provenance are not catalogued." aria-label="View archival photograph demo image">
+        <img src="../asset/img/floating-images/33-GettyImages-154260931-216706f.jpg" class="collage-item" alt="Archival photograph demo image">
+      </button>
+    </div>
+    <div id="torn-paper">
+      <div class="about-content">
+        <p class="label">FICTIONAL CASE FILE · SALTGLASS REACH</p>
+        <h2>Reading a fictional excavation</h2>
+        <div class="about-grid">
+          <div>
+            <p>Imagine a fictional inlet where a dark stain crosses a pale floor, a scatter of broken pottery rests beside it, and a thin charcoal lens sits underneath. The scene is invented, but the questions are real archaeological questions: did the stain form before or after the floor, did the sherds arrive with the same activity, and what can a sample actually date?</p>
+            <p id="pleroma-style-alt-home-010">A single object cannot answer those questions by itself. Excavators record the location, boundaries, and relationships of each context before interpreting it. A hearth, storage pit, or workshop is a hypothesis supported by evidence—not a label to attach to an ambiguous patch of soil.</p>
+            <p>This page uses a made-up site to demonstrate how Pleroma could keep observations, interpretations, dates, and media linked but distinct. Every named place and measurement in the case file is synthetic.</p>
+          </div>
+          <div class="about-features">
+            <div class="about-feature">
+              <h3>1 · Read the layers</h3>
+              <p>Stratigraphic relationships can establish relative order when deposits are intact. A cut, burrow, erosion surface, or later disturbance can interrupt that sequence, so the relationship itself must be recorded.</p>
+            </div>
+            <div class="about-feature">
+              <h3>2 · Separate sample from event</h3>
+              <p>A laboratory result dates the sampled material under stated assumptions; it does not automatically date the building, artifact, or activity beside it. Calibration, context, and possible residual or intrusive material matter.</p>
+            </div>
+            <div class="about-feature">
+              <h3>3 · Keep alternatives visible</h3>
+              <p>The same deposit might reflect a short visit, repeated seasonal use, or a longer occupation. Pleroma’s guideline calls for uncertainty and interpretation to remain explicit rather than presenting a hypothesis as fact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Collage layer: decorative floating cutouts (features section) -->
+      <div class="collage-layer">
+        <button class="collage-wrap collage-2" type="button" data-gallery-image data-title="Demo image: monumental architecture" data-location="Location not catalogued" data-description="Local demo image only; no verified site attribution or catalog record is linked." aria-label="View monumental architecture demo image" id="pleroma-style-alt-home-011">
+          <img src="../asset/img/floating-images/Parthenon-Cropped.webp" class="collage-item" alt="Monumental architecture demo image">
+        </button>
+        <button class="collage-wrap collage-3" type="button" data-gallery-image data-title="Demo image: decorated vessel" data-location="Location not catalogued" data-description="Local demo image only; object type, date, rights, and provenance remain unverified." aria-label="View decorated vessel demo image" id="pleroma-style-alt-home-012">
+          <img src="../asset/img/floating-images/volute-krater-Metropolitan-Museum-of-Art-New-c-450-bce.webp" class="collage-item" alt="Decorated vessel demo image">
+        </button>
+        <button class="collage-wrap collage-5" type="button" data-gallery-image data-title="Demo image: archaeological site" data-location="Location not catalogued" data-description="Local demo image only; no canonical record, date, location, or citation is linked." aria-label="View archaeological site demo image" id="pleroma-style-alt-home-013">
+          <img src="../asset/img/floating-images/Chichen_Itza_3.jpg" class="collage-item" alt="Archaeological site demo image">
+        </button>
+        <button class="collage-wrap" type="button" data-gallery-image data-title="Demo image: artifact detail" data-location="Location not catalogued" data-description="Local demo image only; source, rights, and provenance metadata are not available." aria-label="View artifact detail demo image" id="pleroma-style-alt-home-014">
+          <img src="../asset/img/floating-images/DP-576-001.jpg" class="collage-item" alt="Artifact detail demo image">
+        </button>
+        <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: carved object" data-location="Location not catalogued" data-description="Local demo image only; classification, date, rights, and provenance are placeholders." aria-label="View carved object demo image">
+          <img src="../asset/img/floating-images/1995.21_print.jpg" class="collage-item" alt="Carved object demo image">
+        </button>
+        <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: archaeological sculpture" data-location="Location not catalogued" data-description="Local demo image only; title, date, location, source, rights, and provenance are unverified." aria-label="View archaeological sculpture demo image">
+          <img src="../asset/img/floating-images/2006AP9237.jpg" class="collage-item" alt="Archaeological sculpture demo image">
+        </button>
+        <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: museum artifact" data-location="Location not catalogued" data-description="Local demo image only; collection attribution and catalog details have not been supplied." aria-label="View museum artifact demo image">
+          <img src="../asset/img/floating-images/DP-12449-001.jpg" class="collage-item" alt="Museum artifact demo image">
+        </button>
+        <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: decorated artifact" data-location="Location not catalogued" data-description="Local demo image only; object identification, date, rights, and provenance are placeholders." aria-label="View decorated artifact demo image">
+          <img src="../asset/img/floating-images/DP-24216-003.jpg" class="collage-item" alt="Decorated artifact demo image">
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================
+      STATS SECTION
+    ============================================ -->
+    <section id="stats" class="section-tear section-colored">
+    <div class="stats-content">
+      <p class="label">INTERACTIVE SYNTHETIC DATASET · NOT REAL EVIDENCE</p>
+      <h2>Explore the invented field archive</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="number" data-demo-metric="records">18</p>
+          <p class="label">fictional context records</p>
+        </div>
+        <div class="stat-item">
+          <p class="number" data-demo-metric="zones">3</p>
+          <p class="label">invented research zones</p>
+        </div>
+        <div class="stat-item">
+          <p class="number" data-demo-metric="phases">5</p>
+          <p class="label">simulated activity phases</p>
+        </div>
+        <div class="stat-item">
+          <p class="number">0</p>
+          <p class="label">verified archaeological claims</p>
+        </div>
+      </div>
+      <p class="demo-data-warning">Every row and number below is fabricated. This is sample interface data only: it is not a survey, excavation, lab result, or historical conclusion.</p>
+      <div class="demo-data-controls" aria-label="Filter the fictional sample data">
+        <label for="demo-zone-filter">Invented zone
+          <select id="demo-zone-filter">
+            <option value="">All fictional zones</option>
+            <option value="Saltglass Inlet">Saltglass Inlet</option>
+            <option value="Morrow Ridge">Morrow Ridge</option>
+            <option value="Sable Plain">Sable Plain</option>
+          </select>
+        </label>
+        <label for="demo-record-search">Search fictional records
+          <input id="demo-record-search" type="search" placeholder="Try “charcoal” or “hearth”">
+        </label>
+        <button id="demo-reset" type="button">Reset filters</button>
+        <button id="demo-export" type="button">Download filtered CSV</button>
+      </div>
+      <p id="demo-record-count" class="demo-record-count" aria-live="polite">Loading fictional records…</p>
+      <div class="demo-charts">
+        <figure class="demo-chart">
+          <figcaption>
+            <h3>Simulated finds by activity phase</h3>
+            <p>Counts are invented and update with the zone and search filters.</p>
+          </figcaption>
+          <svg id="demo-phase-chart" role="img" aria-label="Bar chart of fictional find counts by activity phase"></svg>
+        </figure>
+        <figure class="demo-chart">
+          <figcaption>
+            <h3>Simulated material mix</h3>
+            <p>Categories are teaching examples, not real assemblage measurements.</p>
+          </figcaption>
+          <svg id="demo-material-chart" role="img" aria-label="Bar chart of fictional material counts"></svg>
+        </figure>
+      </div>
+      <div class="demo-table-heading">
+        <div>
+          <h3>Fictional context register</h3>
+          <p>Select a column heading to sort. Search and zone filters apply to this table and both charts.</p>
+        </div>
+      </div>
+      <div class="demo-table-scroll">
+        <table class="demo-record-table">
+          <caption>Entirely fabricated example records for demonstrating filters, charts, and sorting.</caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="ascending"><button type="button" data-sort="id">Record ID</button></th>
+              <th scope="col"><button type="button" data-sort="zone">Fictional zone</button></th>
+              <th scope="col"><button type="button" data-sort="context">Context note</button></th>
+              <th scope="col"><button type="button" data-sort="interval">Demo interval</button></th>
+              <th scope="col"><button type="button" data-sort="material">Material</button></th>
+              <th scope="col"><button type="button" data-sort="quantity">Count</button></th>
+              <th scope="col"><button type="button" data-sort="hypothesis">Working hypothesis</button></th>
+            </tr>
+          </thead>
+          <tbody id="demo-record-rows"></tbody>
+        </table>
+      </div>
+      <p class="demo-method-note">Design anchors from the PLEROMA guidelines: represent a site separately from its stratigraphic units; encode chronology with EDTF rather than free text; model scientific observations and interpretations as distinct records; retain source, media-rights, provenance, and revision history.</p>
+    </div>
+    <!-- Collage layer: decorative floating cutouts (evidence section) -->
+    <div class="collage-layer">
+      <button class="collage-wrap collage-1" type="button" data-gallery-image data-title="Demo image: inscribed stone" data-location="Location not catalogued" data-description="Local demo image only; the inscription, date, translation, rights, and provenance are not linked to a record." aria-label="View inscribed stone demo image" id="pleroma-style-alt-home-015">
+        <img src="../asset/img/floating-images/Rosetta_Stone.JPG" class="collage-item" alt="Inscribed stone demo image">
+      </button>
+      <button class="collage-wrap collage-3" type="button" data-gallery-image data-title="Demo image: archaeological object" data-location="Location not catalogued" data-description="Local demo image only; object classification and catalog metadata are placeholders." aria-label="View archaeological object demo image" id="pleroma-style-alt-home-016">
+        <img src="../asset/img/floating-images/DP-13441-005.jpg" class="collage-item" alt="Archaeological object demo image">
+      </button>
+      <button class="collage-wrap collage-4" type="button" data-gallery-image data-title="Demo image: museum object" data-location="Location not catalogued" data-description="Local demo image only; no verified attribution, rights statement, or provenance is attached." aria-label="View museum object demo image" id="pleroma-style-alt-home-017">
+        <img src="../asset/img/floating-images/torc-british-museum.webp" class="collage-item" alt="Museum object demo image">
+      </button>
+      <button class="collage-wrap" type="button" data-gallery-image data-title="Demo image: artifact" data-location="Location not catalogued" data-description="Local demo image only; date, source, citation, rights, and provenance are not linked." aria-label="View artifact demo image" id="pleroma-style-alt-home-018">
+        <img src="../asset/img/floating-images/gr10.124.1.R.jpg" class="collage-item" alt="Artifact demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: carved vessel" data-location="Location not catalogued" data-description="Local demo image only; item metadata, source, rights, and provenance are unverified." aria-label="View carved vessel demo image">
+        <img src="../asset/img/floating-images/DP-13078-001.jpg" class="collage-item" alt="Carved vessel demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: ancient object" data-location="Location not catalogued" data-description="Local demo image only; object type, date, source, rights, and provenance have not been catalogued." aria-label="View ancient object demo image">
+        <img src="../asset/img/floating-images/DP-14364-001.jpg" class="collage-item" alt="Ancient object demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: archaeological find" data-location="Location not catalogued" data-description="Local demo image only; catalog identification and provenance are placeholders." aria-label="View archaeological find demo image">
+        <img src="../asset/img/floating-images/DP-23786-001.jpg" class="collage-item" alt="Archaeological find demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: artifact photograph" data-location="Location not catalogued" data-description="Local demo image only; date, source, rights, and collection attribution have not been supplied." aria-label="View artifact photograph demo image">
+        <img src="../asset/img/floating-images/DT5236.jpg" class="collage-item" alt="Artifact photograph demo image">
+      </button>
+    </div>
+  </section>
+
+    <!-- ============================================
+      FEATURES SECTION
+    ============================================ -->
+    <section id="features" class="section-tear section-white">
+    <div class="features-content">
+      <p class="label">CORE PRINCIPLES</p>
+      <h2>HOW IT WORKS</h2>
+      <div class="features-line"></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <p class="icon">01</p>
+          <h3>Stratigraphy describes relationships</h3>
+          <p>Archaeologists distinguish deposits, cuts, surfaces, and fills because their physical relationships can reveal relative sequence. “Lower” is not automatically “older” if a pit cuts through earlier layers or material has moved. The fictional inlet records those observations first, then stores any explanation as a separate hypothesis.</p>
+        </div>
+        <div class="feature-card">
+          <p class="icon">02</p>
+          <h3>A date belongs to a sample</h3>
+          <p>Radiocarbon analysis estimates when once-living material stopped exchanging carbon with its environment. Calibration converts a measured result into calendar-age probabilities; the dated seed or charcoal may pre-date its deposit or enter it later. Context and sample history are part of the argument, not footnotes.</p>
+        </div>
+        <div class="feature-card">
+          <p class="icon">03</p>
+          <h3>Objects need context</h3>
+          <p>Shape, material, wear, and manufacturing traces help describe an object. Similar forms can arise through exchange, imitation, shared constraints, or coincidence; typological resemblance alone does not establish a people, language, or trade route.</p>
+        </div>
+        <div class="feature-card">
+          <p class="icon">04</p>
+          <h3>Environmental evidence has baselines</h3>
+          <p>Pollen, animal remains, sediments, and isotopes can help reconstruct environments, diet, or mobility. Their interpretation depends on preservation, sampling strategy, local baselines, and comparison material; a single proxy rarely answers a broad social question by itself.</p>
+        </div>
+        <div class="feature-card">
+          <p class="icon">05</p>
+          <h3>Images are evidence too</h3>
+          <p>A photograph or plan needs a parent record, caption, coverage statement, rights information, and a source. Images on this page are local placeholders; none has been connected to a verified site or object record.</p>
+        </div>
+        <div class="feature-card">
+          <p class="icon">06</p>
+          <h3>Interpretations can change</h3>
+          <p>A good research record preserves the evidence supporting a claim, reasonable alternatives, and the history of revisions. New samples, re-analysis, or a better contextual link can change an interpretation without erasing the earlier reasoning.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Collage layer: decorative floating cutouts (timeline section) -->
+    <div class="collage-layer">
+      <button class="collage-wrap collage-4" type="button" data-gallery-image data-title="Demo image: visual documentation" data-location="Location not catalogued" data-description="Local demo image only; no date, source, citation, rights statement, or provenance has been attached." aria-label="View visual documentation demo image" id="pleroma-style-alt-home-019">
+        <img src="../asset/img/floating-images/p0cv0dsc.jpg" class="collage-item" alt="Visual documentation demo image">
+      </button>
+      <button class="collage-wrap collage-2" type="button" data-gallery-image data-title="Demo image: archaeological landscape" data-location="Location not catalogued" data-description="Local demo image only; site identification and chronology are not verified." aria-label="View archaeological landscape demo image" id="pleroma-style-alt-home-020">
+        <img src="../asset/img/floating-images/Chichen_Itza_3.jpg" class="collage-item" alt="Archaeological landscape demo image">
+      </button>
+      <button class="collage-wrap collage-3" type="button" data-gallery-image data-title="Demo image: stone monument" data-location="Location not catalogued" data-description="Local demo image only; this image is not connected to a canonical site record." aria-label="View stone monument demo image" id="pleroma-style-alt-home-021">
+        <img src="../asset/img/floating-images/Stonehenge-example-post-and-lintel-construction.webp" class="collage-item" alt="Stone monument demo image">
+      </button>
+      <button class="collage-wrap" type="button" data-gallery-image data-title="Demo image: historical map" data-location="Location not catalogued" data-description="Local demo image only; date, coverage, source, and rights are not yet catalogued." aria-label="View historical map demo image" id="pleroma-style-alt-home-022">
+        <img src="../asset/img/floating-images/BABYLon-map.webp" class="collage-item" alt="Historical map demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: archaeological object" data-location="Location not catalogued" data-description="Local demo image only; object identification, rights, source, and provenance are placeholders." aria-label="View archaeological object demo image">
+        <img src="../asset/img/floating-images/DP-39988-001.jpg" class="collage-item" alt="Archaeological object demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: excavated object" data-location="Location not catalogued" data-description="Local demo image only; chronology, catalog record, rights, and provenance are not linked." aria-label="View excavated object demo image">
+        <img src="../asset/img/floating-images/DP-42027-001.jpg" class="collage-item" alt="Excavated object demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: Roman arch" data-location="Location not catalogued" data-description="Local demo image only; site attribution, date, rights, and provenance have not been verified." aria-label="View Roman arch demo image">
+        <img src="../asset/img/floating-images/Roman_Arch_of_Trajan_at_Thamugadi_(Timgad),_Algeria_04966r.jpg" class="collage-item" alt="Roman arch demo image">
+      </button>
+      <button class="collage-wrap collage-extra" type="button" data-gallery-image data-title="Demo image: historic weapon" data-location="Location not catalogued" data-description="Local demo image only; identification, date, source, rights, and provenance remain unverified." aria-label="View historic weapon demo image">
+        <img src="../asset/img/floating-images/M-Fal21-Weapons-2.jpg" class="collage-item" alt="Historic weapon demo image">
+      </button>
+    </div>
+  </section>
+
+    <!-- ============================================
+      QUOTE SECTION
+    ============================================ -->
+    <section id="quote" class="section-tear section-colored">
+    <div class="quote-content">
+      <svg viewBox="0 0 24 24">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+      </svg>
+      <blockquote>“One dark stain becomes a hearth only after its edges, contents, context, and alternatives are examined.”</blockquote>
+      <cite>FICTIONAL FIELD NOTE · WRITTEN FOR THIS DEMO</cite>
+    </div>
+  </section>
+
+    <!-- ============================================
+      EVIDENCE ROOM
+    ============================================ -->
+    <section id="evidence" class="section-tear section-white">
+    <div class="evidence-content">
+      <p class="label">LOCAL MEDIA · UNVERIFIED PLACEHOLDERS</p>
+      <h2>Images are not records by themselves</h2>
+      <p class="evidence-intro">The cards below exercise the image viewer only. They are not labeled as real excavated finds, and their captions do not make claims about date, place, ownership, or archaeological interpretation. A production record would connect each image to a documented entity, coverage statement, rights holder, and source.</p>
+      <div class="evidence-grid">
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-001" data-location="Location metadata not supplied" data-description="Local demo image only; no canonical record, date, place, rights holder, citation, or provenance is linked." aria-label="View demo image DEMO-001">
+          <div class="film-image" data-image="../asset/img/slideshow/slide1.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-001</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-002" data-location="Location metadata not supplied" data-description="Local demo image only; catalog description, date, rights, citation, and provenance are placeholders." aria-label="View demo image DEMO-002">
+          <div class="film-image" data-image="../asset/img/slideshow/slide2.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-002</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-003" data-location="Location metadata not supplied" data-description="Local demo image only; no verified description, date, location, rights, or provenance is linked." aria-label="View demo image DEMO-003">
+          <div class="film-image" data-image="../asset/img/slideshow/slide3.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-003</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-004" data-location="Location metadata not supplied" data-description="Local demo image only; object type, date, rights, citation, and provenance have not been verified." aria-label="View demo image DEMO-004">
+          <div class="film-image" data-image="../asset/img/slideshow/slide4.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-004</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-005" data-location="Location metadata not supplied" data-description="Local demo image only; site identification, coverage, date, rights, and provenance are placeholders." aria-label="View demo image DEMO-005">
+          <div class="film-image" data-image="../asset/img/slideshow/slide5.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-005</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+
+        <button class="film-card" type="button" data-gallery-image data-title="Local demo asset DEMO-006" data-location="Location metadata not supplied" data-description="Local demo image only; no canonical record, translation, date, rights statement, or provenance is linked." aria-label="View demo image DEMO-006">
+          <div class="film-image" data-image="../asset/img/slideshow/slide6.jpg">
+          </div>
+          <div class="film-corner"></div>
+          <div class="film-info">
+            <p class="film-label">DEMO-006</p>
+            <h3>Local demo asset</h3>
+            <p>Catalog record not linked</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="painting-showcase" aria-labelledby="painting-showcase-title">
+    <div class="painting-showcase-content">
+      <p class="label">LOCAL IMAGE COLLECTION · DEMO METADATA</p>
+      <h2 id="painting-showcase-title">Paintings &amp; Works on Paper</h2>
+      <p>These local images are included in the interactive carousel. Titles, artists, dates, source, and rights have not been verified or catalogued.</p>
+      <div class="painting-grid">
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 01" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 01">
+          <img src="../asset/img/paintings/G.B.Gaulli-Triumph_of_the_Name_of_Jesus.jpg" alt="Painting demo 01, local placeholder image">
+          <span>Painting demo 01</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 02" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 02">
+          <img src="../asset/img/paintings/Peter_Paul_Rubens_-_The_Feast_of_Venus_-_Google_Art_Project.jpg" alt="Painting demo 02, local placeholder image">
+          <span>Painting demo 02</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 03" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 03">
+          <img src="../asset/img/paintings/feast-venus-rubens.jpg" alt="Painting demo 03, local placeholder image">
+          <span>Painting demo 03</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 04" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 04">
+          <img src="../asset/img/paintings/venus.jpg" alt="Painting demo 04, local placeholder image">
+          <span>Painting demo 04</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 05" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 05">
+          <img src="../asset/img/paintings/56456apsdl.jpg" alt="Painting demo 05, local placeholder image">
+          <span>Painting demo 05</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 06" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 06">
+          <img src="../asset/img/paintings/201700fgsdl.jpg" alt="Painting demo 06, local placeholder image">
+          <span>Painting demo 06</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 07" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 07">
+          <img src="../asset/img/paintings/artifact1 (2).jpg" alt="Painting demo 07, local placeholder image">
+          <span>Painting demo 07</span>
+        </button>
+        <button class="painting-card" type="button" data-gallery-image data-title="Painting demo 08" data-location="Collection metadata not supplied" data-description="Local painting image only. Artist, title, date, source, rights, and provenance have not been verified." aria-label="View painting demo 08">
+          <img src="../asset/img/paintings/dezoomify-result.jpg" alt="Painting demo 08, local placeholder image">
+          <span>Painting demo 08</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="radial-carousel-section" aria-labelledby="evidence-gallery-title">
+    <div class="evidence-gallery-intro">
+      <p class="label">VISUAL EVIDENCE DEMO</p>
+      <h2 id="evidence-gallery-title">Explore the Image Gallery</h2>
+      <p>Choose any framed photo or carousel card to expand it. Scroll over the carousel one image at a time, or use the arrow keys while this gallery is visible. These local images are interface placeholders, not linked Pleroma media records.</p>
+    </div>
+    <div class="radial-carousel-container" aria-label="Image gallery carousel">
+      <div class="radial-carousel-track"></div>
+    </div>
+    <div class="carousel-title-display" aria-live="polite">
+      <h3 class="carousel-active-title"></h3>
+      <p class="carousel-active-location"></p>
+    </div>
+    <div class="carousel-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" tabindex="-1">
+      <div class="carousel-modal-content">
+        <img class="carousel-modal-image" src="" alt="">
+        <aside class="carousel-infographic-panel">
+          <button type="button" class="carousel-modal-close" data-gallery-close aria-label="Close image viewer">Close</button>
+          <p class="gallery-panel-label">DEMO RECORD DETAILS</p>
+          <h2 class="infographic-title" id="gallery-modal-title"></h2>
+          <p class="infographic-location"></p>
+          <div class="infographic-body" aria-live="polite"></div>
+          <dl class="gallery-placeholder-fields">
+            <dt>Record link</dt><dd>Not connected</dd>
+            <dt>Rights &amp; source</dt><dd>Placeholder — not supplied</dd>
+            <dt>Provenance &amp; citation</dt><dd>Placeholder — not supplied</dd>
+            <dt>Certainty / uncertainty</dt><dd>No interpretation or score is attached</dd>
+          </dl>
+          <p class="gallery-guideline-note">Production media must use the configured IIIF image service and preserve rights, source, provenance, and annotation metadata.</p>
+        </aside>
+        <div class="carousel-gallery-controls" aria-label="Image viewer controls">
+          <button type="button" data-gallery-prev aria-label="Previous image">Previous</button>
+          <button type="button" data-gallery-next aria-label="Next image">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============================================
+      TIMELINE / INVESTIGATIVE STRING
+    ============================================ -->
+    <section id="timeline" class="section-tear section-white">
+    <div class="timeline-content">
+      <p class="label">FICTIONAL FIELDWORK SEQUENCE · ALL EVENTS INVENTED</p>
+      <h2>How a case file could develop</h2>
+      
+      <div class="timeline-container">
+        <!-- Investigative String SVG -->
+        <div class="investigative-string">
+          <svg viewBox="0 0 2 1500" preserveAspectRatio="none">
+            <path id="string-path" d="
+              M 1 0
+              L 1 50
+              C 1 80, -10 100, 1 130
+              L 1 200
+              C 1 230, 15 250, 1 280
+              L 1 350
+              C 1 380, -12 400, 1 430
+              L 1 500
+              C 1 530, 10 550, 1 580
+              L 1 650
+              C 1 680, -8 700, 1 730
+              L 1 800
+              C 1 830, 12 850, 1 880
+              L 1 950
+              C 1 980, -15 1000, 1 1030
+              L 1 1100
+              C 1 1130, 8 1150, 1 1180
+              L 1 1250
+              L 1 1500
+            "/>
+          </svg>
+        </div>
+
+        <div class="timeline-item" data-index="0">
+          <p class="year">SIM-STEP 01</p>
+          <h3>Describe before naming</h3>
+          <p>At the imaginary Saltglass Reach, a dark circular stain is photographed, measured, and recorded as a feature. “Hearth” is held back as a hypothesis until its contents and boundaries are examined.</p>
+        </div>
+
+        <div class="timeline-item" data-index="1">
+          <p class="year">SIM-STEP 02</p>
+          <h3>Link the contexts</h3>
+          <p>A fictional floor appears to run beneath the stain, while a narrow cut crosses the floor. The record stores these observed relationships separately from the proposed sequence.</p>
+        </div>
+
+        <div class="timeline-item" data-index="2">
+          <p class="year">SIM-STEP 03</p>
+          <h3>Choose a sample carefully</h3>
+          <p>A simulated charcoal sample is assigned a sample ID, context link, material description, and collection note. The page has no laboratory result; the example exists to demonstrate the data pathway.</p>
+        </div>
+
+        <div class="timeline-item" data-index="3">
+          <p class="year">SIM-STEP 04</p>
+          <h3>Represent a date as a range</h3>
+          <p>The table’s “demo intervals” are fabricated labels, not EDTF dates or calibrated results. In a real record, the original measurement, calibration, uncertainty, and source would remain traceable.</p>
+        </div>
+
+        <div class="timeline-item" data-index="4">
+          <p class="year">SIM-STEP 05</p>
+          <h3>Compare explanations</h3>
+          <p>One fictional model proposes short visits; another proposes repeated seasonal use. Both should point to supporting and opposing evidence, and neither should be rendered as an established fact.</p>
+        </div>
+
+        <div class="timeline-item" data-index="5">
+          <p class="year">SIM-STEP 06</p>
+          <h3>Preserve the revision</h3>
+          <p>If later analysis changes the preferred explanation, a versioned audit trail records why. The earlier hypothesis remains visible as part of the research history rather than silently disappearing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer id="footer" class="section-tear section-white">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>PLEROMA</h3>
+        <p>The Spatiotemporal Engine for Total History. A Digital Humanities infrastructure for documenting human civilizational history.</p>
+      </div>
+      <div class="footer-section">
+        <p class="label">NAVIGATION</p>
+        <nav class="footer-page-links" aria-label="All website pages">
+          <a href="alt_home.html">Demo Home</a>
+          <a href="about_us.html">About Aletheion</a>
+          <a href="archaeology.html">Archaeology</a>
+          <a href="history.html">History</a>
+          <a href="linguistics.html">Linguistics</a>
+          <a href="religion.html">Religion</a>
+          <a href="science.html">Science</a>
+          <a href="society.html">Society</a>
+        </nav>
+      </div>
+      <div class="footer-section">
+        <p class="label">PROJECT ALETHEION</p>
+        <p>Project goal: transparent documentation of assumptions and evidence. This demo has no live algorithms or linked records.</p>
+        <div class="footer-stamp">DEMO · NOT VERIFIED</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>PROJECT ALETHEION · FRONTEND DEMO</p>
+      <p>DEMO MEDIA: <span>PLACEHOLDER RECORDS</span></p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script src="../asset/js/alt-home-page.js"></script>
+  <script src="../asset/js/alt-home-archaeology-demo.js"></script>
+  <script src="../asset/js/carousel-3d.js"></script>
+  <script src="../asset/js/alt-home-header.js"></script>
+
+</body>
+</html>

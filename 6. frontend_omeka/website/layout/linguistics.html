@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive synthetic demonstration of the PLEROMA Linguistic Sphere.">
+  <title>Project Aletheion | Linguistic Sphere</title>
+  <link rel="stylesheet" href="../asset/css/theme-core.css">
+  <link rel="stylesheet" href="../asset/css/site-header.css">
+  <link rel="stylesheet" href="../asset/css/project-palette.css">
+  <link rel="stylesheet" href="../asset/css/linguistics-page.css">
+</head>
+<body class="linguistics-demo">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="alt_home.html" aria-label="Project Aletheion home">
+        <img src="../asset/img/Project_Aletheion.png" alt="Project Aletheion">
+      </a>
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="site-header__links">
+          <li><a href="alt_home.html"><img class="site-header__icon" src="../asset/img/home.png" alt="">Home</a></li>
+          <li><a href="about_us.html"><img class="site-header__icon" src="../asset/img/logo-top.png" alt="">About</a></li>
+          <li><a href="archaeology.html"><img class="site-header__icon" src="../asset/img/archeology.png" alt="">Archaeology</a></li>
+          <li><a href="history.html"><img class="site-header__icon" src="../asset/img/history.png" alt="">History</a></li>
+          <li><a href="linguistics.html" aria-current="page"><img class="site-header__icon" src="../asset/img/linguistics.png" alt="">Linguistics</a></li>
+          <li><a href="religion.html"><img class="site-header__icon" src="../asset/img/religion.png" alt="">Religion</a></li>
+          <li><a href="science.html"><img class="site-header__icon" src="../asset/img/science.png" alt="">Science</a></li>
+          <li><a href="society.html"><img class="site-header__icon" src="../asset/img/society.png" alt="">Society</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="linguistics-hero" aria-labelledby="linguistics-title">
+      <div>
+        <p class="eyebrow">PLEROMA · LINGUISTIC SPHERE</p>
+        <h1 id="linguistics-title">Languages change across place and time</h1>
+        <p>Explore a linked family tree and time-bounded language zones. Keep classification, attestation, chronology, and spatial uncertainty visible.</p>
+        <div class="linguistics-hero__actions">
+          <a class="linguistics-button linguistics-button--primary" href="#family-browser">Explore family tree</a>
+          <a class="linguistics-button linguistics-button--secondary" href="#zone-atlas">Open language-zone atlas</a>
+        </div>
+      </div>
+      <aside class="linguistics-hero__aside">
+        <span class="eyebrow">DATA MODEL</span>
+        <p><strong>Language_Family</strong> is a Glottolog-aligned tree node. <strong>Linguistic_Zone</strong> is a dated polygon, not a timeless border.</p>
+      </aside>
+    </section>
+
+    <aside class="linguistics-fiction-notice" role="note">
+      <strong>FICTIONAL DEMO DATA</strong>
+      <span>Every family, language, dialect, script, date, boundary, site association, citation, and score on this page is invented. Glottocode-shaped values are unverified placeholders, not actual Glottolog records; map shapes are schematic and not geographic evidence.</span>
+    </aside>
+
+    <section class="linguistics-section linguistics-overview" aria-labelledby="overview-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">LOCAL SAMPLE CORPUS</p><h2 id="overview-title">A small, connected language atlas</h2></div>
+        <p>The fixtures model family ancestry, proto-language notes, writing-system references, Unicode ranges, zone status, EDTF spans, and related sites. They do not constitute linguistic scholarship.</p>
+      </div>
+      <div class="linguistics-metrics">
+        <article><strong id="family-count">—</strong><span>fictional family nodes</span></article>
+        <article><strong id="zone-count">—</strong><span>time-bounded zone fixtures</span></article>
+        <article><strong id="site-count">—</strong><span>shared fictional sites</span></article>
+        <article><strong id="active-zone-count">—</strong><span>zones visible at selected time</span></article>
+      </div>
+    </section>
+
+    <section class="linguistics-section linguistic-search" id="language-search" aria-labelledby="search-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">FACETED DISCOVERY</p><h2 id="search-title">Search families and zones</h2></div>
+        <p>Filter synthetic records by family, attestation status, and writing-system reference. Dates are normalized for the slider but remain EDTF in the record view.</p>
+      </div>
+      <form id="linguistic-search-form" class="linguistic-filter-grid">
+        <label class="linguistic-field linguistic-field--wide">
+          <span>Text search</span>
+          <input id="linguistic-query" type="search" placeholder="Language, dialect, code, script, notes…">
+        </label>
+        <label class="linguistic-field">
+          <span>Family</span>
+          <select id="linguistic-family-filter"><option value="">All families</option></select>
+        </label>
+        <label class="linguistic-field">
+          <span>Zone status</span>
+          <select id="linguistic-status-filter">
+            <option value="">All statuses</option>
+            <option value="attested">Attested</option>
+            <option value="reconstructed">Reconstructed</option>
+            <option value="hypothetical">Hypothetical</option>
+          </select>
+        </label>
+        <label class="linguistic-field">
+          <span>Writing-system reference</span>
+          <select id="linguistic-script-filter"><option value="">All scripts</option></select>
+        </label>
+        <div class="linguistic-filter-actions">
+          <button class="linguistics-button linguistics-button--primary" type="submit">Search linguistic records</button>
+          <button class="linguistics-button linguistics-button--quiet" type="reset">Reset</button>
+          <button class="linguistics-button linguistics-button--quiet" type="button" id="linguistic-export">Export filtered fixtures</button>
+        </div>
+      </form>
+      <p class="linguistic-status" id="linguistic-results-summary" aria-live="polite"></p>
+    </section>
+
+    <section class="linguistics-section family-browser" id="family-browser" aria-labelledby="family-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">LANGUAGE_FAMILY · PARENT RELATIONSHIPS</p><h2 id="family-title">Browse the family tree</h2></div>
+        <p>Tree links represent classification relationships, not population movement or political boundaries. The cycle-check preview mirrors the database’s acyclic-parent guard and does not save edits.</p>
+      </div>
+      <div class="family-browser-grid">
+        <article class="family-tree-card">
+          <div class="linguistics-card-heading"><h3>Fictional family hierarchy</h3><span>Glottolog-style tree · demo codes</span></div>
+          <div id="family-tree" class="family-tree" role="tree" aria-label="Synthetic language-family hierarchy"></div>
+        </article>
+        <aside class="family-inspector-card">
+          <p class="eyebrow">SELECTED FAMILY</p>
+          <h3 id="family-name">Select a family</h3>
+          <div id="family-details"></div>
+          <div class="parent-preview">
+            <h4>Parent relationship check</h4>
+            <p>Choose a proposed parent to check whether the relationship would create a cycle. The result is a local preview only.</p>
+            <label class="linguistic-field" for="candidate-parent">Proposed parent</label>
+            <select id="candidate-parent"></select>
+            <button type="button" class="linguistics-button linguistics-button--quiet" id="check-family-parent">Check relationship</button>
+            <p id="family-parent-status" class="linguistic-status" role="status" aria-live="polite"></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="linguistics-section zone-atlas" id="zone-atlas" aria-labelledby="atlas-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">LINGUISTIC_ZONE · TIME-AWARE MAP</p><h2 id="atlas-title">See distributions as dated estimates</h2></div>
+        <p>Toggle family layers and move through time. Hue identifies family, opacity reflects attestation status, and the site list updates to zone links valid at the selected date.</p>
+      </div>
+      <div class="linguistic-time-control">
+        <div><label for="linguistic-date">Selected date</label><output id="linguistic-date-output" for="linguistic-date">—</output></div>
+        <input id="linguistic-date" type="range" min="-4500" max="-1000" step="50" value="-3000">
+        <p>Slider years use astronomical numbering; record expressions remain EDTF. No spatial service or real map coordinates are connected.</p>
+      </div>
+      <div class="zone-atlas-grid">
+        <article class="linguistic-map-card">
+          <div class="linguistics-card-heading"><h3 id="linguistic-map-title">Language zones at selected date</h3><span id="linguistic-map-date">—</span></div>
+          <div class="family-layer-controls">
+            <strong>Visible family layers</strong>
+            <div id="family-visibility" class="family-visibility"></div>
+          </div>
+          <div class="linguistic-map-frame">
+            <svg id="linguistic-map" viewBox="0 0 920 500" role="img" aria-labelledby="linguistic-map-title linguistic-map-description">
+              <desc id="linguistic-map-description">Schematic fictional language-zone polygons and related sample archaeological sites.</desc>
+              <defs>
+                <pattern id="linguistic-grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" class="linguistic-grid-line"></path></pattern>
+              </defs>
+              <rect class="linguistic-map-ground" width="920" height="500"></rect>
+              <rect width="920" height="500" fill="url(#linguistic-grid)"></rect>
+              <g id="linguistic-zone-layer"></g>
+            </svg>
+          </div>
+          <div class="linguistic-map-legend">
+            <span><i class="legend-swatch legend-swatch--attested"></i>Attested · stronger saturation</span>
+            <span><i class="legend-swatch legend-swatch--reconstructed"></i>Reconstructed · lower saturation</span>
+            <span><i class="legend-swatch legend-swatch--hypothetical"></i>Hypothetical · faint / dashed</span>
+            <span><i class="legend-site"></i>Linked fictional site</span>
+          </div>
+          <div class="linguistic-map-readout">
+            <span>Map state</span><strong id="linguistic-map-state">Loading fixtures…</strong>
+          </div>
+          <p class="linguistic-map-note">Polygons are schematic SVG drawings in local coordinates. Real WGS 84 geometry, GeoServer, paleoclimate layers, and Glottolog lookups are not connected.</p>
+        </article>
+        <aside class="zone-inspector-card">
+          <p class="eyebrow">SELECTED LINGUISTIC ZONE</p>
+          <h3 id="zone-name">Select a visible zone</h3>
+          <div id="zone-details"></div>
+          <h4>Sites linked to this zone at this date</h4>
+          <ul id="zone-site-list" class="zone-site-list"></ul>
+          <button type="button" class="linguistics-button linguistics-button--quiet" id="test-zone-publication">Test publication requirements</button>
+          <p id="zone-publication-status" class="linguistic-status" role="status" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="linguistics-section zone-results" aria-labelledby="zone-results-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">LANGUAGE + DIALECT RECORDS</p><h2 id="zone-results-title">Matching linguistic zones</h2></div>
+        <p>Choose a result to inspect its family, temporal expression, script reference, linked sites, citations, media placeholder, and synthetic trust preview.</p>
+      </div>
+      <div id="linguistic-results" class="linguistic-results" aria-live="polite"></div>
+    </section>
+
+    <section class="linguistics-section linguistics-readiness" aria-labelledby="readiness-title">
+      <div class="linguistics-section-heading">
+        <div><p class="eyebrow">PRODUCTION READINESS</p><h2 id="readiness-title">What this demo does not connect</h2></div>
+        <p>The page exercises the data model locally; publication or research use requires validated identifiers, evidence, geometry, and server-side checks.</p>
+      </div>
+      <div class="linguistics-readiness-grid">
+        <article><h3>Classification and scripts</h3><p>Validate Glottolog identifiers against an adopted release, resolve parent links and SKOS writing-system concepts, and maintain versioned authority mappings.</p></article>
+        <article><h3>Spatial and temporal evidence</h3><p>Replace schematic polygons with valid PostGIS geography, validate EDTF against normalized year bounds, and query zones plus archaeological sites through the API at a selected date.</p></article>
+        <article><h3>Evidence and rights</h3><p>Attach verified bibliography records and link-level citations, rights-cleared Media_Gallery assets, editorial provenance, and server-derived trust inputs before publication.</p></article>
+      </div>
+      <p class="linguistics-crosslink">Related synthetic text-witness comparison: <a href="history.html#witness-title">History demo source criticism</a>. Archaeological site fixtures: <a href="archaeology.html">Archaeology demo</a>.</p>
+    </section>
+  </main>
+
+  <footer class="linguistics-footer">
+    <div><strong>Project Aletheion · PLEROMA</strong><p>Linguistic Sphere demonstration · Synthetic language data only</p></div>
+    <nav aria-label="Footer navigation">
+      <a href="alt_home.html">Home</a><a href="about_us.html">About</a><a href="archaeology.html">Archaeology</a><a href="history.html">History</a><a href="linguistics.html">Linguistics</a><a href="religion.html">Religion</a><a href="science.html">Science</a><a href="society.html">Society</a>
+    </nav>
+  </footer>
+
+  <script src="../asset/js/archaeology-demo-data.js"></script>
+  <script src="../asset/js/linguistics-demo-data.js"></script>
+  <script src="../asset/js/linguistics-page.js"></script>
+</body>
+</html>

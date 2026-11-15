@@ -1,0 +1,82 @@
+:root {
+  --pleroma-black: #96765e;
+  --pleroma-muted: #d4bfa7;
+  --pleroma-warm: #c5a68c;
+  --pleroma-offwhite: #fff9f2;
+  --pleroma-accent: var(--pleroma-warm);
+  --pleroma-accent-dark: #b9987e;
+
+  --color-ink: #1a1a1a;
+  --color-muted: var(--pleroma-muted);
+  --color-accent-base: var(--pleroma-warm);
+  --color-bg: var(--pleroma-offwhite);
+  --color-accent: var(--color-accent-base);
+  --color-accent-contrast: #edf1f1;
+
+  --terminal-green: var(--pleroma-muted);
+  --terminal-cyan: var(--pleroma-warm);
+  --terminal-yellow: var(--pleroma-offwhite);
+
+  --color-black: var(--pleroma-black);
+  --color-white: var(--pleroma-offwhite);
+  --color-dark: var(--pleroma-black);
+  --color-light-dark: var(--pleroma-accent-dark);
+  --color-gray: var(--pleroma-black);
+  --color-light-gray: var(--pleroma-warm);
+  --color-teal: var(--pleroma-muted);
+  --color-yellow: var(--pleroma-warm);
+  --color-blue: var(--pleroma-accent-dark);
+  --thm-base: var(--pleroma-warm);
+  --thm-base-hover: var(--pleroma-accent-dark);
+  --thm-black: var(--pleroma-black);
+  --thm-gray: var(--pleroma-black);
+  --bg-dark: var(--pleroma-black);
+  --bg-panel: var(--pleroma-accent-dark);
+  --thm-base-rgb: 197, 166, 140;
+  --thm-base-hover-rgb: 185, 152, 126;
+  --thm-gray-rgb: 212, 191, 167;
+  --bg-panel-rgb: 185, 152, 126;
+  --color-white-rgb: 255, 249, 242;
+  --color-black-rgb: 150, 118, 94;
+
+  --paper: var(--pleroma-offwhite);
+  --paper-dark: var(--pleroma-muted);
+  --paper-aged: var(--pleroma-accent-dark);
+  --ink: var(--color-ink);
+  --red: var(--pleroma-black);
+  --red-dark: var(--pleroma-accent-dark);
+  --sepia: var(--pleroma-black);
+  --sepia-lt: var(--pleroma-accent-dark);
+  --primary-dark: var(--pleroma-black);
+  --panel-bg: var(--pleroma-accent-dark);
+  --accent: var(--pleroma-warm);
+  --hover: var(--pleroma-accent-dark);
+  --gold: var(--pleroma-warm);
+  --bg-color: var(--pleroma-offwhite);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink);
+  --border-color: var(--pleroma-muted);
+  --accent-color: var(--pleroma-warm);
+  --hover-fill: var(--pleroma-accent-dark);
+}
+
+img {
+  max-width: 100%;
+}
+
+img:not(.collage-item):not(.carousel-modal-image):not(.site-header__icon):not(.nav-icon):not(.logo-image):not(.icon-lang):not(.icon-login):not(.footer-logo-img):not([src*="Project_Aletheion"]):not(.module-action-icon) {
+  object-fit: cover;
+}
+
+.collage-item,
+.carousel-modal-image {
+  object-fit: contain;
+}
+
+.module-action-icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.4em;
+  vertical-align: -0.2em;
+}

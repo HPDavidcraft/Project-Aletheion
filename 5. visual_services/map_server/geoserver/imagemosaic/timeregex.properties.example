@@ -1,0 +1,4 @@
+# Copy beside indexer.properties as timeregex.properties.
+# Expected filename convention: <prefix>_YYYY-MM-DD.tif.
+# Replace the date pattern/format only after confirming the dataset's time axis.
+regex=.*_([0-9]{4}-[0-9]{2}-[0-9]{2})[.]tif,format=yyyy-MM-dd

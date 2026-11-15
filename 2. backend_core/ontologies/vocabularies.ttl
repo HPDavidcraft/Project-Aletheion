@@ -1,0 +1,167 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pleroma: <https://pleroma.project-aletheion.org/ontology/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://pleroma.project-aletheion.org/vocab/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Pleroma controlled vocabularies"@en ;
+    dcterms:source "Project Aletheion / Pleroma Guidelines v1.0, sections 3.3, 3.5, and 4" .
+
+<https://pleroma.project-aletheion.org/vocab/object-type/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Object types"@en ;
+    skos:scopeNote "Use Getty AAT concepts; project-specific concepts require vocabulary governance review."@en .
+
+<https://pleroma.project-aletheion.org/vocab/material-type/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Material types"@en ;
+    skos:scopeNote "Populate with approved concepts and external mappings; do not mint terms during production data entry."@en .
+
+<https://pleroma.project-aletheion.org/vocab/event-type/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Event types"@en .
+
+<https://pleroma.project-aletheion.org/vocab/feature-type/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Feature types"@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Provenance legal status"@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/clear>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/legal-status/> ;
+    skos:prefLabel "Clear"@en ;
+    skos:definition "No known legal restriction on public access or export."@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/contested>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/legal-status/> ;
+    skos:prefLabel "Contested"@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/repatriated>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/legal-status/> ;
+    skos:prefLabel "Repatriated"@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/stolen>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/legal-status/> ;
+    skos:prefLabel "Stolen"@en .
+
+<https://pleroma.project-aletheion.org/vocab/legal-status/under-review>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/legal-status/> ;
+    skos:prefLabel "Under review"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Acquisition methods"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/excavation>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Excavation"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/purchase>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Purchase"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/gift>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Gift"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/seizure>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Seizure"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/repatriation>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Repatriation"@en .
+
+<https://pleroma.project-aletheion.org/vocab/acquisition-method/unknown>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/acquisition-method/> ;
+    skos:prefLabel "Unknown"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Interaction types"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/trade>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interaction-type/> ;
+    skos:prefLabel "Trade"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/warfare>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interaction-type/> ;
+    skos:prefLabel "Warfare"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/migration>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interaction-type/> ;
+    skos:prefLabel "Migration"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/cultural-diffusion>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interaction-type/> ;
+    skos:prefLabel "Cultural diffusion"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interaction-type/environmental-co-response>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interaction-type/> ;
+    skos:prefLabel "Environmental co-response"@en .
+
+<https://pleroma.project-aletheion.org/vocab/linguistic-status/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Linguistic attestation status"@en .
+
+<https://pleroma.project-aletheion.org/vocab/linguistic-status/attested>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/linguistic-status/> ;
+    skos:prefLabel "Attested"@en .
+
+<https://pleroma.project-aletheion.org/vocab/linguistic-status/reconstructed>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/linguistic-status/> ;
+    skos:prefLabel "Reconstructed"@en .
+
+<https://pleroma.project-aletheion.org/vocab/linguistic-status/hypothetical>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/linguistic-status/> ;
+    skos:prefLabel "Hypothetical"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/>
+    a skos:ConceptScheme ;
+    skos:prefLabel "Interpretation conflict-resolution status"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/consensus>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interpretation-status/> ;
+    skos:prefLabel "Consensus"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/minority>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interpretation-status/> ;
+    skos:prefLabel "Minority"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/contested>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interpretation-status/> ;
+    skos:prefLabel "Contested"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/superseded>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interpretation-status/> ;
+    skos:prefLabel "Superseded"@en .
+
+<https://pleroma.project-aletheion.org/vocab/interpretation-status/refuted>
+    a skos:Concept ;
+    skos:inScheme <https://pleroma.project-aletheion.org/vocab/interpretation-status/> ;
+    skos:prefLabel "Refuted"@en .

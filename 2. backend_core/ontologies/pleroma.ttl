@@ -1,0 +1,372 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pleroma: <https://pleroma.project-aletheion.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crmarch: <http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/> .
+@prefix crmgeo: <http://www.cidoc-crm.org/cidoc-crm/CRMgeo/> .
+@prefix crmsci: <http://www.cidoc-crm.org/cidoc-crm/CRMsci/> .
+@prefix crminf: <http://www.cidoc-crm.org/cidoc-crm/CRMinf/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://pleroma.project-aletheion.org/ontology/>
+    a owl:Ontology ;
+    dcterms:title "Pleroma Ontology Profile"@en ;
+    dcterms:description "Project-owned classes and relationships for the Pleroma data model, mapped to established cultural-heritage standards where specified."@en ;
+    dcterms:source "Project Aletheion / Pleroma Guidelines v1.0, sections 3 and 4" ;
+    owl:versionInfo "0.1.0-draft" ;
+    rdfs:comment "This profile references, but does not redistribute, external ontology definitions. Validate external class IRIs against the adopted ontology releases before production use."@en .
+
+pleroma:ProjectEntity
+    a owl:Class ;
+    rdfs:label "Pleroma project entity"@en ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+pleroma:EvidenceRecord
+    a owl:Class ;
+    rdfs:label "Evidence record"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:Site
+    a owl:Class ;
+    rdfs:label "Site"@en ;
+    rdfs:comment "A geographically defined archaeological or cultural-heritage site."@en ;
+    rdfs:subClassOf crm:E27_Site, pleroma:ProjectEntity .
+
+pleroma:Find
+    a owl:Class ;
+    rdfs:label "Find"@en ;
+    rdfs:comment "A discrete portable object recovered from an archaeological context."@en ;
+    rdfs:subClassOf crm:E22_Human-Made_Object, pleroma:EvidenceRecord .
+
+pleroma:Feature
+    a owl:Class ;
+    rdfs:label "Feature"@en ;
+    rdfs:comment "A non-portable physical manifestation within a site."@en ;
+    rdfs:subClassOf crm:E25_Human-Made_Feature, pleroma:EvidenceRecord .
+
+pleroma:StratigraphicUnit
+    a owl:Class ;
+    rdfs:label "Stratigraphic Unit"@en ;
+    rdfs:comment "A modeled spatial unit with Harris Matrix relationships; not a free-text field on a parent record."@en ;
+    rdfs:subClassOf crmarch:A2_Stratigraphic_Volume_Unit, pleroma:ProjectEntity .
+
+pleroma:HistoricalEvent
+    a owl:Class ;
+    rdfs:label "Historical Event"@en ;
+    rdfs:subClassOf crm:E5_Event, pleroma:ProjectEntity .
+
+pleroma:HistoricalPerson
+    a owl:Class ;
+    rdfs:label "Historical Person"@en ;
+    rdfs:subClassOf crm:E21_Person, pleroma:ProjectEntity .
+
+pleroma:BioSample
+    a owl:Class ;
+    rdfs:label "Biological Sample"@en ;
+    rdfs:comment "A biological sample with a documented collection context and chain of custody."@en ;
+    rdfs:subClassOf crmsci:S2_Sample, pleroma:EvidenceRecord .
+
+pleroma:HumanSample
+    a owl:Class ;
+    rdfs:label "Human Sample"@en ;
+    rdfs:subClassOf pleroma:BioSample .
+
+pleroma:FloraSpecimen
+    a owl:Class ;
+    rdfs:label "Flora Specimen"@en ;
+    rdfs:subClassOf pleroma:BioSample .
+
+pleroma:FaunaSpecimen
+    a owl:Class ;
+    rdfs:label "Fauna Specimen"@en ;
+    rdfs:subClassOf pleroma:BioSample .
+
+pleroma:MaterialAnalysisEvent
+    a owl:Class ;
+    rdfs:label "Material Analysis Event"@en ;
+    rdfs:subClassOf crmsci:S4_Observation, pleroma:ProjectEntity .
+
+pleroma:InterpretationHypothesis
+    a owl:Class ;
+    rdfs:label "Interpretation Hypothesis"@en ;
+    rdfs:comment "A scholarly interpretation modeled separately from the evidence it discusses."@en ;
+    rdfs:subClassOf crminf:I1_Argumentation, pleroma:ProjectEntity .
+
+pleroma:HypothesisPropositionSet
+    a owl:Class ;
+    rdfs:label "Hypothesis Proposition Set"@en ;
+    rdfs:subClassOf crminf:I4_Proposition_Set, pleroma:ProjectEntity .
+
+pleroma:TextWitness
+    a owl:Class ;
+    rdfs:label "Text Witness"@en ;
+    rdfs:comment "A specific manuscript or epigraphic witness of a textual tradition."@en ;
+    rdfs:subClassOf frbroo:F4_Manifestation_Singleton, pleroma:EvidenceRecord .
+
+pleroma:RegionalChronicle
+    a owl:Class ;
+    rdfs:label "Regional Chronicle"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:ClusterHistory
+    a owl:Class ;
+    rdfs:label "Cluster History"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:SiteHistory
+    a owl:Class ;
+    rdfs:label "Site History"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:OccupationalPeriod
+    a owl:Class ;
+    rdfs:label "Occupational Period"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:CulturalProfile
+    a owl:Class ;
+    rdfs:label "Cultural Profile"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:SocietalAspect
+    a owl:Class ;
+    rdfs:label "Societal Aspect"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:TheologicalSystem
+    a owl:Class ;
+    rdfs:label "Theological System"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:ReligiousElement
+    a owl:Class ;
+    rdfs:label "Religious Element"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:CivilizationComplex
+    a owl:Class ;
+    rdfs:label "Civilization Complex"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:PolityPhase
+    a owl:Class ;
+    rdfs:label "Polity Phase"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:GeoFeatureTemporal
+    a owl:Class ;
+    rdfs:label "Temporal Geographic Feature"@en ;
+    rdfs:subClassOf crmgeo:SP2_Phenomenal_Place, pleroma:ProjectEntity .
+
+pleroma:SpatiotemporalExtent
+    a owl:Class ;
+    rdfs:label "Spatiotemporal Extent"@en ;
+    rdfs:subClassOf crmgeo:SP1_Phenomenal_Spacetime_Volume, pleroma:ProjectEntity .
+
+pleroma:ResourceNode
+    a owl:Class ;
+    rdfs:label "Resource Node"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:MovementVector
+    a owl:Class ;
+    rdfs:label "Movement Vector"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:LanguageFamily
+    a owl:Class ;
+    rdfs:label "Language Family"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:LinguisticZone
+    a owl:Class ;
+    rdfs:label "Linguistic Zone"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:ChronometricSample
+    a owl:Class ;
+    rdfs:label "Chronometric Sample"@en ;
+    rdfs:subClassOf crmsci:S2_Sample, pleroma:ProjectEntity .
+
+pleroma:MaterialAnalysisResult
+    a owl:Class ;
+    rdfs:label "Material Analysis Result"@en ;
+    rdfs:subClassOf crmsci:S6_Data_Object, pleroma:ProjectEntity .
+
+pleroma:ConservationLog
+    a owl:Class ;
+    rdfs:label "Conservation Log"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:ProvenanceChain
+    a owl:Class ;
+    rdfs:label "Provenance Chain"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:ExcavationProtocol
+    a owl:Class ;
+    rdfs:label "Excavation Protocol"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:LiturgicalEvent
+    a owl:Class ;
+    rdfs:label "Liturgical Event"@en ;
+    rdfs:subClassOf crm:E5_Event, pleroma:ProjectEntity .
+
+pleroma:OralTraditionNode
+    a owl:Class ;
+    rdfs:label "Oral Tradition Node"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:SensoryProfile
+    a owl:Class ;
+    rdfs:label "Sensory Profile"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:TemporalDistribution
+    a owl:Class ;
+    rdfs:label "Temporal Distribution"@en ;
+    rdfs:comment "A project data structure for a bounded date distribution and probability curve."@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:MediaGallery
+    a owl:Class ;
+    rdfs:label "Media Gallery"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:MediaAsset
+    a owl:Class ;
+    rdfs:label "Media Asset"@en ;
+    rdfs:comment "Media metadata and object-storage pointers; binary content is held outside PostgreSQL."@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:BibliographicReference
+    a owl:Class ;
+    rdfs:label "Bibliographic Reference"@en ;
+    rdfs:subClassOf pleroma:ProjectEntity .
+
+pleroma:EvidenceLink
+    a owl:Class ;
+    rdfs:label "Evidence Link"@en ;
+    rdfs:comment "A typed link to a specific evidence record, identified by its persistent UUID."@en .
+
+pleroma:hasOccupationalPeriod
+    a owl:ObjectProperty ;
+    rdfs:label "has occupational period"@en ;
+    rdfs:domain pleroma:Site ;
+    rdfs:range pleroma:OccupationalPeriod .
+
+pleroma:hasStratigraphicUnit
+    a owl:ObjectProperty ;
+    rdfs:label "has stratigraphic unit"@en ;
+    rdfs:domain pleroma:Site ;
+    rdfs:range pleroma:StratigraphicUnit .
+
+pleroma:stratigraphicallyAbove
+    a owl:ObjectProperty ;
+    rdfs:label "stratigraphically above"@en ;
+    rdfs:domain pleroma:StratigraphicUnit ;
+    rdfs:range pleroma:StratigraphicUnit ;
+    rdfs:comment "The directed above/below stratigraphic graph must be acyclic."@en .
+
+pleroma:stratigraphicallyBelow
+    a owl:ObjectProperty ;
+    rdfs:label "stratigraphically below"@en ;
+    rdfs:domain pleroma:StratigraphicUnit ;
+    rdfs:range pleroma:StratigraphicUnit .
+
+pleroma:containsFind
+    a owl:ObjectProperty ;
+    rdfs:label "contains find"@en ;
+    rdfs:domain pleroma:StratigraphicUnit ;
+    rdfs:range pleroma:Find .
+
+pleroma:containsFeature
+    a owl:ObjectProperty ;
+    rdfs:label "contains feature"@en ;
+    rdfs:domain pleroma:StratigraphicUnit ;
+    rdfs:range pleroma:Feature .
+
+pleroma:hasInterpretation
+    a owl:ObjectProperty ;
+    rdfs:label "has interpretation"@en ;
+    rdfs:domain pleroma:ProjectEntity ;
+    rdfs:range pleroma:InterpretationHypothesis .
+
+pleroma:hasPropositionSet
+    a owl:ObjectProperty ;
+    rdfs:label "has proposition set"@en ;
+    rdfs:domain pleroma:InterpretationHypothesis ;
+    rdfs:range pleroma:HypothesisPropositionSet .
+
+pleroma:producesDataObject
+    a owl:ObjectProperty ;
+    rdfs:label "produces data object"@en ;
+    rdfs:domain pleroma:MaterialAnalysisEvent ;
+    rdfs:range pleroma:MaterialAnalysisResult .
+
+pleroma:hasEvidence
+    a owl:ObjectProperty ;
+    rdfs:label "has evidence"@en ;
+    rdfs:domain pleroma:InterpretationHypothesis ;
+    rdfs:range pleroma:EvidenceRecord .
+
+pleroma:hasEvidenceLink
+    a owl:ObjectProperty ;
+    rdfs:label "has evidence link"@en ;
+    rdfs:domain pleroma:InterpretationHypothesis ;
+    rdfs:range pleroma:EvidenceLink .
+
+pleroma:hasProvenanceChain
+    a owl:ObjectProperty ;
+    rdfs:label "has provenance chain"@en ;
+    rdfs:domain pleroma:Find ;
+    rdfs:range pleroma:ProvenanceChain .
+
+pleroma:hasMediaGallery
+    a owl:ObjectProperty ;
+    rdfs:label "has media gallery"@en ;
+    rdfs:domain pleroma:ProjectEntity ;
+    rdfs:range pleroma:MediaGallery .
+
+pleroma:hasMediaAsset
+    a owl:ObjectProperty ;
+    rdfs:label "has media asset"@en ;
+    rdfs:domain pleroma:MediaGallery ;
+    rdfs:range pleroma:MediaAsset .
+
+pleroma:hasBibliographicReference
+    a owl:ObjectProperty ;
+    rdfs:label "has bibliographic reference"@en ;
+    rdfs:domain pleroma:ProjectEntity ;
+    rdfs:range pleroma:BibliographicReference .
+
+pleroma:certaintyScore
+    a owl:DatatypeProperty ;
+    rdfs:label "certainty score"@en ;
+    rdfs:domain pleroma:InterpretationHypothesis ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Application validation constrains values to the inclusive interval [0, 1]."@en .
+
+pleroma:edtfDate
+    a owl:DatatypeProperty ;
+    rdfs:label "EDTF date"@en ;
+    rdfs:domain pleroma:ProjectEntity ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Canonical date values must conform to the adopted EDTF profile; free-text period names belong in notes."@en .
+
+pleroma:controlledTerm
+    a owl:ObjectProperty ;
+    rdfs:label "controlled term"@en ;
+    rdfs:range skos:Concept .
+
+pleroma:legalStatus
+    a owl:ObjectProperty ;
+    rdfs:label "legal status"@en ;
+    rdfs:domain pleroma:ProvenanceChain ;
+    rdfs:range skos:Concept ;
+    rdfs:comment "Non-clear statuses restrict public export and sharing."@en .

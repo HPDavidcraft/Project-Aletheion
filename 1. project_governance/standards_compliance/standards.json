@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "source": "Pleroma_Guidelines_v1.0.pdf, sections 1.3.2, 3.1–3.5, 4.1, and 7.4",
+  "compliance_statuses": [
+    "not_assessed",
+    "in_progress",
+    "compliant",
+    "blocked"
+  ],
+  "standards": [
+    {
+      "id": "cidoc-crm",
+      "name": "CIDOC Conceptual Reference Model (CIDOC CRM)",
+      "version": "ISO 21127",
+      "authority": "CIDOC / ISO",
+      "scope": "Upper-level ontology for cultural heritage entities and relationships.",
+      "mandatory_usage": [
+        "Map every Pleroma entity class, property, and relationship to a recognized ontology.",
+        "Use CRM classes and properties as the semantic backbone for cultural-heritage data."
+      ],
+      "implementation_contract": [
+        "Maintain mappings in schema and ontology documentation.",
+        "Document unmapped concepts and propose project SKOS concepts or formal ontology extensions."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "crm-archaeo",
+      "name": "CIDOC CRM Archaeological Excavation Model (CRMarchaeo)",
+      "version": "As adopted by the project ontology",
+      "authority": "CIDOC",
+      "scope": "Archaeological stratigraphy, excavation sequences, and excavation activities.",
+      "mandatory_usage": [
+        "Model stratigraphic units and archaeological excavation relationships using the extension.",
+        "Represent stratigraphic units as relational entities, not parent-record free text."
+      ],
+      "implementation_contract": [
+        "Use A2 Stratigraphic Volume Unit and the applicable containment relationships described in the project ontology."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "crm-sci",
+      "name": "CIDOC CRM Scientific Observation Model (CRMsci)",
+      "version": "As adopted by the project ontology",
+      "authority": "CIDOC",
+      "scope": "Scientific sampling, observations, and resulting data.",
+      "mandatory_usage": [
+        "Represent laboratory sampling and material-analysis observations using the scientific extension."
+      ],
+      "implementation_contract": [
+        "Use S2 Sample, S4 Observation, and S6 Data Object where applicable."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "crm-geo",
+      "name": "CIDOC CRM Geospatial Model (CRMgeo)",
+      "version": "As adopted by the project ontology",
+      "authority": "CIDOC",
+      "scope": "Spatiotemporal reasoning and geographic entities.",
+      "mandatory_usage": [
+        "Use the extension for rigorous 4D spatiotemporal representation."
+      ],
+      "implementation_contract": [
+        "Map geospatial entities and temporal extents to the project ontology's CRMgeo profile."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "crm-inf",
+      "name": "CIDOC CRM Argumentation Model (CRMinf)",
+      "version": "As adopted by the project ontology",
+      "authority": "CIDOC",
+      "scope": "Hypotheses, propositions, arguments, and belief formation.",
+      "mandatory_usage": [
+        "Represent interpretation hypotheses separately from observed or material evidence."
+      ],
+      "implementation_contract": [
+        "Use I1 Argumentation and I4 Proposition Set where applicable.",
+        "Retain certainty and evidence links with the interpretation."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "frbroo",
+      "name": "FRBR Object-Oriented (FRBRoo)",
+      "version": "As adopted by the project ontology",
+      "authority": "IFLA / CIDOC",
+      "scope": "Bibliographic records and textual traditions.",
+      "mandatory_usage": [
+        "Use for bibliographic and manuscript entities where relevant, including Text_Witness modeling."
+      ],
+      "implementation_contract": [
+        "Map manuscript and bibliographic entities to documented FRBRoo classes, including F4 Manifestation Singleton where applicable."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "aat",
+      "name": "Getty Art & Architecture Thesaurus (AAT)",
+      "version": "Getty AAT subset",
+      "authority": "Getty Research Institute",
+      "scope": "Object and feature typology.",
+      "mandatory_usage": [
+        "Use Getty AAT terms for Object_Type fields on Find and Feature records."
+      ],
+      "implementation_contract": [
+        "Store controlled terms as SKOS concepts and map applicable concepts to AAT identifiers."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "gbif-backbone",
+      "name": "GBIF Backbone Taxonomy",
+      "version": "Current adopted release to be recorded during implementation",
+      "authority": "Global Biodiversity Information Facility",
+      "scope": "Biological species identification.",
+      "mandatory_usage": [
+        "Use for Flora_Specimen and Fauna_Specimen species identifications."
+      ],
+      "implementation_contract": [
+        "Record the GBIF taxon identifier and retain reconciliation provenance."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "glottolog",
+      "name": "Glottolog",
+      "version": "Current adopted release to be recorded during implementation",
+      "authority": "Max Planck Institute for Evolutionary Anthropology",
+      "scope": "Language-family and linguistic-zone classification.",
+      "mandatory_usage": [
+        "Use Glottolog identifiers for Language_Family and Linguistic_Zone classifications."
+      ],
+      "implementation_contract": [
+        "Store the Glottolog code with the classification and retain reconciliation provenance."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "atu-thompson",
+      "name": "Aarne-Thompson-Uther Index and Thompson Motif-Index",
+      "version": "Applicable editions to be recorded during implementation",
+      "authority": "International Society for Folk Narrative Research",
+      "scope": "Narrative, religious, and oral-tradition motifs.",
+      "mandatory_usage": [
+        "Use for Religious_Element and Oral_Tradition motif assignments."
+      ],
+      "implementation_contract": [
+        "Represent assignments as controlled concepts and preserve source/index identifiers."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "edtf",
+      "name": "Extended Date/Time Format (EDTF)",
+      "version": "ISO 8601-2:2019",
+      "authority": "Library of Congress / ISO",
+      "scope": "Machine-readable dates, ranges, and temporal uncertainty.",
+      "mandatory_usage": [
+        "Use EDTF for every canonical date and time-span field.",
+        "Reject free-text dates in canonical date fields."
+      ],
+      "implementation_contract": [
+        "Validate EDTF on write.",
+        "Preserve uncertainty and approximation markers rather than normalizing them away.",
+        "Keep period names and explanatory date prose in notes, alongside a canonical EDTF value."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "zotero-doi",
+      "name": "Zotero bibliographic integration and DOI identifiers",
+      "version": "Project integration profile",
+      "authority": "Corporation for Digital Scholarship / DOI registration agencies",
+      "scope": "Bibliographic references and citation identity.",
+      "mandatory_usage": [
+        "Link Bibliographic_Reference records to the Zotero group library using Zotero_Key.",
+        "Record a DOI for journal articles, excavation reports, and dataset references when one exists."
+      ],
+      "implementation_contract": [
+        "Synchronize the Zotero cache and detect duplicates by DOI where available."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "ogc-iso-19107",
+      "name": "OGC Simple Features and ISO 19107",
+      "version": "Applicable profile to be recorded during implementation",
+      "authority": "Open Geospatial Consortium / ISO",
+      "scope": "Geometry storage, validation, and geospatial publication.",
+      "mandatory_usage": [
+        "Use standards-compliant geometries for spatial data.",
+        "Publish geospatial layers through OGC-compliant WMS and WFS."
+      ],
+      "implementation_contract": [
+        "Validate geometry topology and coordinate reference systems before accepting writes."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "iiif",
+      "name": "IIIF Presentation API and Image API",
+      "version": "3.0",
+      "authority": "International Image Interoperability Framework Consortium",
+      "scope": "Media presentation, image delivery, and annotations.",
+      "mandatory_usage": [
+        "Deliver media assets through IIIF; direct local-image hosting is prohibited."
+      ],
+      "implementation_contract": [
+        "Use Cantaloupe for IIIF image delivery.",
+        "Store manifest and image-service URIs with media metadata.",
+        "Version annotation edits rather than overwriting prior states."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "rdf-serialization",
+      "name": "RDF 1.1 Turtle and JSON-LD",
+      "version": "W3C Recommendations",
+      "authority": "World Wide Web Consortium",
+      "scope": "Triple-store export and Linked Open Data publication.",
+      "mandatory_usage": [
+        "Use Turtle or JSON-LD for triple-store exports and Linked Open Data publication."
+      ],
+      "implementation_contract": [
+        "Document serialization context, namespaces, and mapping rules for each published dataset."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    },
+    {
+      "id": "skos",
+      "name": "Simple Knowledge Organization System (SKOS)",
+      "version": "W3C Recommendation",
+      "authority": "World Wide Web Consortium",
+      "scope": "Controlled vocabularies, concept schemes, and hierarchical terms.",
+      "mandatory_usage": [
+        "Represent enumerated categories and controlled vocabularies as SKOS concept schemes."
+      ],
+      "implementation_contract": [
+        "Mirror vocabulary concepts in the triple store and PostgreSQL lookup tables.",
+        "Use skos:broader, skos:narrower, and skos:related for concept relations.",
+        "Use skos:exactMatch, skos:closeMatch, or skos:broadMatch for external mappings.",
+        "Use persistent Pleroma vocabulary URIs and govern new terms through review."
+      ],
+      "status": "not_assessed",
+      "evidence": ""
+    }
+  ],
+  "linked_data_reconciliation": [
+    {
+      "entity_type": "Site",
+      "authority": "Pleiades Gazetteer",
+      "link_property": "owl:sameAs",
+      "method": "Batch reconciliation followed by manual verification"
+    },
+    {
+      "entity_type": "Site",
+      "authority": "Wikidata",
+      "link_property": "owl:sameAs",
+      "method": "Reconciliation service followed by manual verification"
+    },
+    {
+      "entity_type": "Historical_Person",
+      "authority": "VIAF",
+      "link_property": "owl:sameAs",
+      "method": "Name matching followed by manual verification"
+    },
+    {
+      "entity_type": "Historical_Person",
+      "authority": "Wikidata",
+      "link_property": "owl:sameAs",
+      "method": "Reconciliation service followed by manual verification"
+    },
+    {
+      "entity_type": "Object_Type",
+      "authority": "Getty AAT",
+      "link_property": "skos:exactMatch",
+      "method": "AAT term lookup"
+    },
+    {
+      "entity_type": "Biological Species",
+      "authority": "GBIF Backbone",
+      "link_property": "dwc:taxonID",
+      "method": "Species matching and verification"
+    },
+    {
+      "entity_type": "Language_Family / Linguistic_Zone",
+      "authority": "Glottolog",
+      "link_property": "glottolog:languoid",
+      "method": "Identifier reconciliation"
+    },
+    {
+      "entity_type": "Bibliographic_Reference",
+      "authority": "Crossref / DOI",
+      "link_property": "bibo:doi",
+      "method": "DOI metadata lookup during ingest"
+    }
+  ]
+}

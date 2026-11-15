@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>About Project Aletheion | The Total History Mandate</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A federated, computationally active Digital Humanities infrastructure.">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../asset/img/logo-top.png">
+    <link rel="shortcut icon" href="../asset/img/logo-top.png">
+    <link rel="apple-touch-icon" href="../asset/img/logo-top.png">
+
+    <!-- Core shared header styles -->
+    <link rel="stylesheet" href="../asset/css/theme-core.css">
+    <link rel="stylesheet" href="../asset/css/header-nav.css">
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../asset/css/about-us-page.css">
+    <link rel="stylesheet" href="../asset/css/site-header.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="../asset/css/about-us-element-styles.css">
+  <link rel="stylesheet" href="../asset/css/project-palette.css">
+</head>
+
+<body class="about-page">
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-header__brand" href="alt_home.html" aria-label="Project Aletheion home">
+                <img src="../asset/img/Project_Aletheion.png" alt="Project Aletheion">
+            </a>
+            <nav class="site-header__nav" aria-label="Primary navigation">
+                <ul class="site-header__links">
+                    <li><a href="alt_home.html"><img class="site-header__icon" src="../asset/img/home.png" alt="">Home</a></li>
+                    <li><a href="about_us.html" aria-current="page"><img class="site-header__icon" src="../asset/img/logo-top.png" alt="">About</a></li>
+                    <li><a href="archaeology.html"><img class="site-header__icon" src="../asset/img/archeology.png" alt="">Archaeology</a></li>
+                    <li><a href="history.html"><img class="site-header__icon" src="../asset/img/history.png" alt="">History</a></li>
+                    <li><a href="linguistics.html"><img class="site-header__icon" src="../asset/img/linguistics.png" alt="">Linguistics</a></li>
+                    <li><a href="religion.html"><img class="site-header__icon" src="../asset/img/religion.png" alt="">Religion</a></li>
+                    <li><a href="science.html"><img class="site-header__icon" src="../asset/img/science.png" alt="">Science</a></li>
+                    <li><a href="society.html"><img class="site-header__icon" src="../asset/img/society.png" alt="">Society</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN SCROLL CONTAINER -->
+    <div class="scroll-container">
+        
+        <!-- THE STRIP -->
+        <div class="horizontal-strip" id="MainStrip">
+
+            <!-- SECTION 1: THE MANDATE (MANIFESTO) -->
+            <div id="section_mandate" class="panel w-wide">
+                <span class="meta-tag">/// 01.0 PROJECT ABSTRACT</span>
+                <h1>The<br>Total<br>History<br>Mandate</h1>
+                <div id="pleroma-style-about-us-001">
+                    <div>
+                        <p><strong>Objective:</strong> To architect a federated, computationally active Digital Humanities infrastructure capable of ingesting, modeling, and analyzing the totality of human material culture and intangible heritage.</p>
+                        <p><strong>Operational Scope:</strong> Phase I covers the exhaustive documentation of all known archaeological sites, stratigraphy, and artifacts in Europe and West Asia, spanning the Paleolithic to Chalcolithic ages.</p>
+                    </div>
+                    <div>
+                        <p><strong>The "Decoupled" Paradigm:</strong> The system rejects the monolithic CMS model. It utilizes a headless Relational/Spatial backend (PostgreSQL/PostGIS) for rigorous data modeling, a Computational Layer (Jupyter) for analysis, and Omeka S strictly for narrative publication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: ARCHITECTURE (Visual Stack) -->
+            <div id="section_architecture" class="panel w-med">
+                <span class="meta-tag">/// 02.0 THE TECHNICAL FEDERATION</span>
+                <h2>System Architecture</h2>
+                
+                <ul class="protocol-list">
+                    <li>
+                        <span><strong>Tier I: Data Core</strong></span>
+                        <span id="pleroma-style-about-us-002">PostgreSQL 16+ / PostGIS / Apache Jena</span>
+                    </li>
+                    <li>
+                        <span><strong>Tier II: Logic & API</strong></span>
+                        <span id="pleroma-style-about-us-003">Python (FastAPI) / Directus / MeiliSearch</span>
+                    </li>
+                    <li>
+                        <span><strong>Tier III: Computational Science</strong></span>
+                        <span id="pleroma-style-about-us-004">OxCal / HDF5 / JupyterHub (K8s)</span>
+                    </li>
+                    <li>
+                        <span><strong>Tier IV: Visualization</strong></span>
+                        <span id="pleroma-style-about-us-005">Geoserver (WMS) / Cantaloupe (IIIF)</span>
+                    </li>
+                    <li>
+                        <span><strong>Tier V: Interface</strong></span>
+                        <span id="pleroma-style-about-us-006">Omeka S / Federated SPARQL 1.1</span>
+                    </li>
+                </ul>
+                <div class="caption">Figure 2.1: The five-tier decoupled stack enforcing separation of concerns.</div>
+            </div>
+
+            <!-- SECTION 3: THE DEEP MAP (4D GIS) -->
+            <div id="section_deepmap" class="panel w-med Work">
+                <span class="meta-tag">/// 03.0 4D-GIS INFRASTRUCTURE</span>
+                <div class="figure-container">
+                    <!-- Placeholder for Stratigraphy Image -->
+                    <a href="#" class="Work__Media">
+                        <img src="../asset/img/gobekli-tepe.jpg" alt="Stratigraphic Sequencing Analysis">
+                    </a>
+                </div>
+                <h3>The Deep Map State Machine</h3>
+                <p>We do not simply place points on a map. We model the <strong>Stratigraphic Unit</strong>. The system validates Harris Matrices to ensure acyclic temporal relationships.</p>
+                <p>The "Deep Map" defines deterministic layer stacks per user selection (site / period / stratum / find), automatically switching base and overlay layers via Geoserver WFS.</p>
+            </div>
+
+            <!-- SECTION 4: HARD SCIENCES (Genomics/Bio) -->
+            <div id="section_science" class="panel w-med Work">
+                <span class="meta-tag">/// 04.0 BIO-ARCHAEOLOGY MODULE</span>
+                <div class="figure-container">
+                    <!-- Placeholder for Lab/Science Image -->
+                    <a href="#" class="Work__Media">
+                        <img src="../asset/img/hero-bg.jpg" alt="Genomic Dispersion Graph">
+                    </a>
+                </div>
+                <h3>Genomics & Chronometry</h3>
+                <p><strong>Radiocarbon (C14):</strong> Raw uncalibrated dates are stored permanently. Bayesian calibration is performed on-demand via OxCal API wrappers.</p>
+                <p><strong>aDNA Storage:</strong> High-throughput sequencing data is stored in HDF5/BioSQL containers, allowing for real-time generation of haplogroup dispersion graphs via Python pipelines.</p>
+            </div>
+
+            <!-- SECTION 5: INTANGIBLE HERITAGE -->
+            <div id="section_intangible" class="panel w-med Work">
+                <span class="meta-tag">/// 05.0 ONTOLOGY OF BELIEF</span>
+                <div class="figure-container">
+                     <!-- Placeholder for Art/Religion Image -->
+                    <a href="#" class="Work__Media">
+                        <img src="../asset/img/adam-eve-rubens.jpg" alt="Iconography and Motif Indexing">
+                    </a>
+                </div>
+                <h3>Theological Architecture</h3>
+                <p>Ad-hoc naming is prohibited. All narrative elements are indexed using the <strong>Aarne-Thompson-Uther (ATU)</strong> or Thompson Motif-Index logic via SKOS.</p>
+                <p>We model the <em>Liturgical Event</em> as a temporal node with recurrence rules (RRULE), linked to astronomical alignments and temple features.</p>
+            </div>
+
+            <!-- SECTION 6: GOVERNANCE ("DO NOT") -->
+            <div id="section_governance" class="panel w-narrow">
+                <span class="meta-tag">/// 06.0 IMMUTABLE PROTOCOLS</span>
+                <h2 id="pleroma-style-about-us-007">The "DO NOT" Protocol</h2>
+                
+                <ul class="protocol-list" id="pleroma-style-about-us-008">
+                    <li>
+                        <span class="do-not">NO FLAT DATA</span>
+                        <span id="pleroma-style-about-us-009">Stratum is not text. It is a relational entity.</span>
+                    </li>
+                    <li>
+                        <span class="do-not">NO LOCAL IMAGES</span>
+                        <span id="pleroma-style-about-us-010">All media must be served via IIIF.</span>
+                    </li>
+                    <li>
+                        <span class="do-not">NO HARDCODED DATES</span>
+                        <span id="pleroma-style-about-us-011">Use EDTF Integer Ranges.</span>
+                    </li>
+                    <li>
+                        <span class="do-not">NO INTERP. AS FACT</span>
+                        <span id="pleroma-style-about-us-012">Tag as "Structure", Interpret as "Temple".</span>
+                    </li>
+                    <li>
+                        <span class="do-not">NO PROPRIETARY FORMATS</span>
+                        <span id="pleroma-style-about-us-013">Excel/Word prohibited. CSV/JSON-LD only.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SECTION 7: STANDARDS COMPLIANCE -->
+            <div id="section_standards" class="panel w-narrow">
+                <span class="meta-tag">/// 07.0 STANDARDS ALIGNMENT</span>
+                <h3>Ontological Rigor</h3>
+                <p>Data modeling adheres strictly to <strong>ISO 21127 (CIDOC CRM)</strong>.</p>
+                
+                <div id="pleroma-style-about-us-014">
+                    <div class="meta-tag">CRMarchaeo (CRMba)</div>
+                    <p id="pleroma-style-about-us-015">Modeling stratigraphic sequences and soil genesis.</p>
+                    
+                    <div class="meta-tag" id="pleroma-style-about-us-016">CRMsci</div>
+                    <p id="pleroma-style-about-us-017">Modeling observation and sampling methodology.</p>
+
+                    <div class="meta-tag" id="pleroma-style-about-us-018">CRMgeo</div>
+                    <p id="pleroma-style-about-us-019">Rigorous spatiotemporal reasoning.</p>
+                </div>
+            </div>
+
+             <!-- SECTION 8: CITIZEN SCIENCE -->
+             <div id="section_agora" class="panel w-med">
+                <span class="meta-tag">/// 08.0 THE AGORA</span>
+                <div class="figure-container">
+                     <video autoplay loop muted playsinline id="pleroma-style-about-us-020">
+                        <source src="../asset/img/hero-bg.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>Citizen Science Integration</h3>
+                <p>The Agora module allows for crowd-sourced transcription, classification, and pattern recognition. User contributions are recorded with provenance, using consensus aggregation algorithms weighted by contributor reliability scores (Gold/Silver/Bronze badges).</p>
+            </div>
+
+        </div> <!-- END STRIP -->
+
+    </div> <!-- END SCROLL CONTAINER -->
+
+    <!-- SCRIPTS -->
+    <script src="../asset/js/about-us-scroll.js"></script>
+
+    <!-- Project Detail View Overlay -->
+    <div class="project-detail-view">
+        <div class="hero-image-container"></div>
+        <div class="detail-content">
+            <div class="meta-year"></div>
+            <div class="meta-role"></div>
+            <div class="meta-client"></div>
+            <h1 class="hero-title"></h1>
+            <p class="lead-paragraph description"></p>
+            <div class="body-paragraph"></div>
+            <button class="close-btn" data-close-project>×</button>
+        </div>
+    </div>
+
+    <!-- Include Flip Animation Script -->
+    <script src="../asset/js/flip-animation.js"></script>
+    <script src="../asset/js/about-us-project-data.js"></script>
+</body>
+</html>

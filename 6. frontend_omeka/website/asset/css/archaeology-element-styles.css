@@ -1,0 +1,73 @@
+/* Extracted per-element style declarations. */
+
+#pleroma-style-archaeology-001 {
+  width: 100%; text-align: center; padding: 40px 20px; background-color: var(--pleroma-black); color: var(--pleroma-offwhite); margin-bottom: 40px;
+}
+
+#pleroma-style-archaeology-002 {
+  margin: 0; font-size: 2.5rem; color: #C5A059;
+}
+
+#pleroma-style-archaeology-003 {
+  margin-top: 10px; opacity: 0.8;
+}
+
+#pleroma-style-archaeology-004 {
+  margin-top: 20px;
+}
+
+#pleroma-style-archaeology-005 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-offwhite); border: none; padding: 10px 20px;
+}
+
+#pleroma-style-archaeology-006 {
+  background-color: transparent; color: #C5A059; border: 1px solid #C5A059; margin-left: 10px;
+}
+
+#pleroma-style-archaeology-007 {
+  display: flex; justify-content: flex-end; gap: 15px; margin-top: 10px; border-top: 1px solid var(--pleroma-offwhite); padding-top: 20px;
+}
+
+#btn-reset-search {
+  background: transparent; color: #666666; border: 1px solid var(--pleroma-muted); padding: 10px 20px; font-weight: bold; cursor: pointer; transition: all 0.2s;
+}
+
+#btn-execute-search {
+  background-color: var(--pleroma-muted); color: var(--pleroma-offwhite); border: 2px solid var(--pleroma-muted); padding: 10px 30px; font-weight: bold; font-size: 1.1rem; transition: all 0.2s;
+}
+
+#pleroma-style-archaeology-008 {
+  margin: 12px 0 0; color: #666;
+}
+
+#pleroma-style-archaeology-009 {
+  margin-top: 40px; text-align: center;
+}
+
+#pleroma-style-archaeology-010 {
+  color: var(--pleroma-black); font-weight: bold; font-size: 1.2rem; margin-bottom: 15px;
+}
+
+#pleroma-style-archaeology-011 {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+
+#pleroma-style-archaeology-012 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-black); padding: 8px 16px; border-radius: 20px; text-decoration: none; border: 1px solid var(--pleroma-muted);
+}
+
+#pleroma-style-archaeology-013 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-black); padding: 8px 16px; border-radius: 20px; text-decoration: none; border: 1px solid var(--pleroma-muted);
+}
+
+#pleroma-style-archaeology-014 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-black); padding: 8px 16px; border-radius: 20px; text-decoration: none; border: 1px solid var(--pleroma-muted);
+}
+
+#pleroma-style-archaeology-015 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-black); padding: 8px 16px; border-radius: 20px; text-decoration: none; border: 1px solid var(--pleroma-muted);
+}
+
+#pleroma-style-archaeology-016 {
+  background-color: var(--pleroma-muted); color: var(--pleroma-black); padding: 8px 16px; border-radius: 20px; text-decoration: none; border: 1px solid var(--pleroma-muted);
+}

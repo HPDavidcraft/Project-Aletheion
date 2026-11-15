@@ -1,0 +1,748 @@
+/* =========================================
+   ETRO HOME — Luxury Textile Experience
+   Full-bleed hero, horizontal scroll, kinetic type
+   ========================================= */
+
+/* ===== SMOOTH SCROLL ENGINE (Lenis-like) ===== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244, 242, 239, 0.6);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.35s cubic-bezier(0.25,1,0.5,1),
+              height 0.35s cubic-bezier(0.25,1,0.5,1),
+              border-color 0.35s ease,
+              background 0.35s ease,
+              opacity 0.3s ease;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.custom-cursor.cursor-hover {
+  width: 70px;
+  height: 70px;
+  border-color: rgba(244, 242, 239, 0.9);
+  background: rgba(244, 242, 239, 0.08);
+}
+.custom-cursor.cursor-hidden {
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor { display: none; }
+}
+
+/* ===== HERO SECTION — Full-Bleed Textile ===== */
+.etro-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+.etro-hero__media {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.etro-hero__media img,
+.etro-hero__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0.85);
+}
+
+.etro-hero__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.etro-hero__text {
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.etro-hero__subtitle {
+  font-family: var(--thm-font), sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  letter-spacing: 5px;
+  margin-bottom: 12px;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.etro-hero__subtitle .reveal-text {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.etro-hero__subtitle .reveal-text.visible {
+  transform: translateY(0%);
+}
+
+.etro-hero__title {
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.etro-hero__title .reveal-text {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.etro-hero__title .reveal-text.visible {
+  transform: translateY(0%);
+}
+
+/* Hero CTA Button */
+.etro-hero__cta {
+  margin-top: 40px;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.etro-hero__cta .reveal-text {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+.etro-hero__cta .reveal-text.visible {
+  transform: translateY(0%);
+}
+
+.etro-btn {
+  display: inline-block;
+  padding: 16px 50px;
+  border: 1px solid var(--thm-base);
+  border-radius: 50px;
+  color: var(--color-white);
+  font-family: var(--thm-font), sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.etro-btn::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--thm-base-rgb),0.24);
+  transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+.etro-btn:hover::before {
+  top: 0;
+}
+
+.etro-footer-new {
+  /* Stick to the bottom of its scroll area — visible when that area is in view */
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: none;
+  will-change: auto;
+  /* Raised above header and content so it is always visible within its area */
+  z-index: 1000;
+  /* Hidden by default until user scrolls past the midpoint of the page (JS toggles `.mid-visible`) */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 460px;
+  padding: 60px 40px 30px;
+  color: var(--color-white);
+  font-family: var(--thm-font), sans-serif;
+  box-shadow: 0 -18px 40px rgba(0,0,0,0.6);
+  border-top: 1px solid rgba(255,255,255,0.03);
+  transition: opacity 0.36s ease, transform 0.36s ease, visibility 0.36s;
+  transform: translateY(6px);
+}
+
+/* Reveal the footer once page midpoint has been passed */
+.etro-footer-new.mid-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Legacy reveal class retained for compatibility but no transform behavior */
+.etro-footer-new.revealed {
+  z-index: 9999;
+}
+.scroll-prompt {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Place just below the centered overlay content */
+  top: calc(75% + 16vh);
+  z-index: 30;
+  color: rgba(255,255,255,0.95);
+  background: transparent;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.scroll-prompt.hidden {
+  opacity: 0;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* Hero spacer — creates scroll room for fixed hero */
+.hero-spacer {
+  position: relative;
+  z-index: 1;
+  height: calc(100vh + 6px);
+  pointer-events: none;
+}
+
+/* ===== BRAND STATEMENT SECTION ===== */
+.brand-statement {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--color-white);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.brand-statement__title {
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--thm-black);
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+}
+
+.brand-statement__title .reveal-text {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-statement__title .reveal-text.visible {
+  transform: translateY(0%);
+}
+
+.brand-statement__body {
+  font-family: var(--thm-font), sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: #555;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.brand-statement__body.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== HORIZONTAL SCROLL GALLERY ===== */
+.hscroll-section {
+  position: relative;
+  z-index: 3;
+  background: var(--color-white);
+}
+
+.hscroll-pin {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100svh;
+  display: grid;
+  place-content: center;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.hscroll-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.02em;
+}
+
+.hscroll-track-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hscroll-track {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  will-change: transform;
+}
+
+.hscroll-spacer-left {
+  flex: none;
+  width: 85%;
+  height: 100%;
+}
+
+.hscroll-cards {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.hscroll-spacer-right {
+  flex: none;
+  width: 25%;
+  height: 100%;
+}
+
+/* Fabric Cards */
+.fabric-card {
+  flex: none;
+  width: 25vw;
+  margin-right: 10vw;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fabric-card:nth-child(odd) {
+  transform: translateY(-40px) rotate(-6deg);
+}
+
+.fabric-card:nth-child(even) {
+  transform: translateY(40px) rotate(6deg);
+}
+
+.fabric-card:hover {
+  transform: translateY(-50px) rotate(0deg) !important;
+}
+
+.fabric-card__figure {
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fabric-card__img-wrap {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.fabric-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fabric-card:hover .fabric-card__img-wrap img {
+  transform: scale(1.1);
+}
+
+.fabric-card__caption {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.fabric-card__name {
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--thm-black);
+  text-transform: capitalize;
+}
+
+.fabric-card__type {
+  font-family: var(--thm-font), sans-serif;
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .fabric-card {
+    width: 75vw;
+    margin-right: 15vw;
+  }
+}
+
+/* ===== COLLECTION SECTIONS (PRINT, VELVET, ETHNIC) ===== */
+.collections-wrapper {
+  position: relative;
+  z-index: 21;
+  background: var(--bg-dark);
+}
+
+.collection-section {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.collection-section.visible {
+  opacity: 1;
+}
+
+.collection-section__image {
+  flex: none;
+  width: 35vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.8s ease;
+}
+
+.collection-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.collection-section__image--left {
+  transform: translateX(-300px) rotate(-20deg);
+  opacity: 0;
+}
+
+.collection-section__image--right {
+  transform: translateX(300px) rotate(20deg);
+  opacity: 0;
+}
+
+.collection-section.visible .collection-section__image--left {
+  transform: translateX(0) rotate(-4deg);
+  opacity: 1;
+}
+
+.collection-section.visible .collection-section__image--right {
+  transform: translateX(0) rotate(4deg);
+  opacity: 1;
+}
+
+.collection-section__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-white);
+  z-index: 5;
+}
+
+.collection-section__label {
+  font-family: var(--thm-font), sans-serif;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.collection-section__label .reveal-text {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collection-section.visible .collection-section__label .reveal-text {
+  transform: translateY(0%);
+}
+
+/* Kinetic Typography — Variable Width Distortion */
+.collection-section__heading {
+  font-family: var(--thm-font-two), serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  font-variation-settings: "wdth" 100;
+  transition: font-variation-settings 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.collection-section__heading .reveal-text {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.collection-section.visible .collection-section__heading .reveal-text {
+  transform: translateY(0%);
+}
+
+/* Kinetic distortion on individual letters */
+.kinetic-letter {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              font-variation-settings 0.4s ease;
+  will-change: transform;
+}
+
+.kinetic-letter.distort {
+  transform: scaleX(1.4);
+}
+
+.collection-section__cta {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.collection-section__cta .etro-btn {
+  border-color: rgba(255,255,255,0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s,
+              color 0.4s ease, border-color 0.4s ease;
+}
+
+.collection-section.visible .collection-section__cta .etro-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .collection-section {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+  
+  .collection-section__image {
+    width: 70vw;
+  }
+  
+  .collection-section__image--left {
+    transform: translateX(-100px) rotate(-10deg);
+  }
+  
+  .collection-section__image--right {
+    transform: translateX(100px) rotate(10deg);
+  }
+}
+
+/* ===== ETRO FOOTER (Fixed Reveal) ===== */
+.etro-footer-new {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Hidden by default: sit below the viewport (translateY) and not interactive */
+  transform: translateY(100%);
+  /* transform will be driven by scroll position (no CSS transition) */
+  transition: none;
+  will-change: transform;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 460px;
+  padding: 60px 40px 30px;
+  color: var(--color-white);
+  font-family: var(--thm-font), sans-serif;
+}
+
+/* Revealed state: slide up and become interactive */
+.etro-footer-new.revealed {
+  /* Revealed state: make interactive and on top; transform is controlled inline by JS */
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.footer-spacer {
+  position: relative;
+  z-index: 1;
+  height: var(--footer-height, 460px);
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-col h3 {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: var(--color-white);
+}
+
+.footer-new-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+}
+
+.footer-new-bottom .footer-logo-img {
+  height: 30px;
+  opacity: 0.8;
+}
+
+.footer-new-bottom p {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .etro-footer-new {
+    padding: 40px 20px 20px;
+    min-height: 400px;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ===== UTILITY ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Override body styles for this page */
+body.etro-home {
+  background: var(--color-white);
+  cursor: none;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body.etro-home {
+    cursor: auto;
+  }
+}
+
+/* Ensure main content sits above fixed footer */
+body.etro-home main {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}

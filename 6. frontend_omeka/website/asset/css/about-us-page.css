@@ -1,0 +1,360 @@
+
+        /* GLOBAL RESET & TYPOGRAPHY */
+        /* REVISED CSS VARIABLES (Project Aletheion Standard) */
+        :root {
+            /* Backgrounds */
+            --bg-color: var(--pleroma-offwhite);      /* Retain Archival Paper base for readability */
+            --panel-bg: var(--pleroma-offwhite);
+
+            /* Typography */
+            --text-primary: var(--pleroma-black);  /* Deep Loam - Main Body Text */
+            --text-secondary: var(--pleroma-accent-dark); /* Dark Olive - Meta tags, captions */
+
+            /* UI Elements */
+            --border-color: var(--pleroma-muted);  /* Muted Sage - Panel dividers */
+            --accent-color: var(--pleroma-black);  /* Bronze/Clay - Links, Highlights */
+            --alert-color: #b33939;   /* Keep Red for "DO NOT" protocols (Signal color) */
+
+            /* Interactive States */
+            --hover-fill: var(--pleroma-warm);    /* Desaturated Gold - Hover states */
+
+            /* Backwards-compatible aliases used elsewhere in styles */
+            --text-color: var(--text-primary);
+            --accent-color-legacy: var(--accent-color);
+        }
+
+        /* APPLICATION */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-primary);
+        }
+
+        .meta-tag {
+            color: var(--text-secondary);
+        }
+
+        .panel {
+            border-right: 1px solid var(--border-color);
+            background: var(--panel-bg);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        a:hover {
+            color: var(--hover-fill);
+        }
+
+        /* Specific Override for the "DO NOT" section to use the palette */
+        #section_governance {
+            background-color: var(--pleroma-muted); /* A slightly darker tint of the paper using the Sage influence */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: default !important; /* Force standard cursor */
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* SCROLL GEOMETRY */
+        .scroll-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .horizontal-strip {
+            display: flex;
+            flex-wrap: nowrap;
+            height: 100%;
+            width: fit-content;
+            will-change: transform;
+        }
+
+        /* ACADEMIC PANELS */
+        .panel {
+            height: 100vh;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--border-color);
+            position: relative;
+            padding: 4rem;
+            background: var(--bg-color);
+        }
+
+        /* Width variations for rhythm */
+        .w-wide { width: 70vw; }
+        .w-med { width: 55vw; }
+        .w-narrow { width: 35vw; }
+
+        /* TYPOGRAPHY SYSTEM */
+        h1 {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        p {
+            font-size: 1rem;
+            max-width: 60ch;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .meta-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #555;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* IMAGERY - TIGHT & ACADEMIC */
+        .figure-container {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: var(--pleroma-black);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .figure-container img, .figure-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures image fills container */
+            opacity: 0.8;
+            transition: opacity 0.5s ease;
+            filter: grayscale(100%);
+        }
+
+        .figure-container:hover img {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .Work__Media {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .Work__Media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .caption {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            border-left: 1px solid #000;
+            padding-left: 0.5rem;
+        }
+
+        /* LISTS FOR PROTOCOLS */
+        ul.protocol-list {
+            list-style: none;
+            border-top: 1px solid #000;
+        }
+
+        ul.protocol-list li {
+            border-bottom: 1px solid var(--pleroma-muted);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .do-not {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        body.about-page {
+            background: var(--color-ink, #1a1a1a);
+            color: var(--pleroma-offwhite, #fff9f2);
+        }
+
+        .about-page .panel,
+        .about-page #section_governance {
+            background: var(--color-ink, #1a1a1a);
+            color: var(--pleroma-offwhite, #fff9f2);
+        }
+
+        .about-page .panel h1,
+        .about-page .panel h2,
+        .about-page .panel h3,
+        .about-page .panel p,
+        .about-page .panel strong,
+        .about-page .panel li,
+        .about-page .panel .meta-tag,
+        .about-page .panel .caption {
+            color: var(--pleroma-offwhite, #fff9f2);
+        }
+
+        .about-page .panel h2,
+        .about-page .panel ul.protocol-list {
+            border-color: var(--pleroma-muted, #d4bfa7);
+        }
+
+        .about-page .panel ul.protocol-list li {
+            border-color: rgba(212, 191, 167, 0.45);
+        }
+
+        /* HEADER OVERRIDES */
+        .top-spacer {
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 999;
+            border-bottom: 1px solid var(--pleroma-offwhite);
+        }
+        
+        /* NAVIGATION OVERRIDES */
+        header {
+            background-color: transparent;
+            border-bottom: none;
+            position: fixed;
+            top: -25px; /* nudged up slightly */
+            left: 0;
+            width: 100%;
+            z-index: 99999; /* ensure header is above everything */
+            box-shadow: none;
+            mix-blend-mode: difference;
+            transition: none;
+            pointer-events: auto;
+            transform: translateZ(0); /* promote to its own layer */
+            will-change: transform;
+        }
+
+        /* Project Detail View Styles */
+        .project-detail-view {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--pleroma-black);
+            z-index: 2000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-detail-view.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            background: var(--pleroma-black);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .detail-content {
+            padding: 20px; /* bring text closer to page edges */
+            color: var(--pleroma-offwhite);
+            max-width: calc(100% - 40px); /* fill near-to-edge while preserving gutters */
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            font-size: clamp(14px, 1.1vw, 16px); /* responsive sizing to help fit */
+            line-height: 1.4;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            /* Restrict height so text fits within remaining viewport under the hero */
+            max-height: calc(40vh - 24px);
+            overflow-y: auto;
+        }
+
+        .detail-content .meta-year,
+        .detail-content .meta-role,
+        .detail-content .meta-client {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--pleroma-muted);
+        }
+
+        .detail-content .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--pleroma-offwhite);
+        }
+
+        .detail-content .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--pleroma-offwhite);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2010;
+        }

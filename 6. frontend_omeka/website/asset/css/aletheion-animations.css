@@ -1,0 +1,261 @@
+/* =========================================
+   ALETHEION ANIMATIONS (Modern Enhanced)
+   ========================================= */
+
+/* =========================================
+   SCROLL & REVEAL ANIMATIONS
+   ========================================= */
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Staggered Cards Animation */
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.animate-container[class*="animate-"] > [class*="animate-"]:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+/* Number Counting Animation */
+@keyframes countUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.stat-number {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: countUp 0.6s var(--ease-smooth) forwards;
+}
+
+/* Card Hover Animation */
+.feature-card {
+    transition: all 0.4s var(--ease-smooth);
+}
+
+@keyframes cardLift {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+    100% {
+        transform: translateY(-12px);
+    }
+}
+
+.feature-card:hover {
+    animation: cardLift 0.6s var(--ease-smooth) forwards;
+}
+
+/* Gold Glow/Pulse Effect */
+@keyframes goldPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(197, 160, 89, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(197, 160, 89, 0.5);
+    }
+}
+
+.gold-glow {
+    animation: goldPulse 3s ease-in-out infinite;
+}
+
+/* Loading/Spinner Animation */
+@keyframes spinGlyph {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-glyph {
+    animation: spinGlyph 2s linear infinite;
+    display: inline-block;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s var(--ease-smooth) forwards;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 49% {
+        border-color: var(--thm-base);
+    }
+    50%, 100% {
+        border-color: transparent;
+    }
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid var(--thm-base);
+    white-space: nowrap;
+    animation: typing 3s steps(60, end) 1s forwards, blink 0.7s step-end 1s infinite;
+    width: 0;
+}
+
+/* Staggered Fade In */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s var(--ease-smooth) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(7) { animation-delay: 0.7s; }
+.stagger-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* Progress Bar Fill Animation */
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width, 100%);
+    }
+}
+
+.progress-fill {
+    animation: progressFill 1.2s var(--ease-smooth) forwards;
+    background: linear-gradient(90deg, var(--thm-base), var(--thm-base-hover));
+}
+
+/* Button Pulse Animation */
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.btn-pulse {
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+/* Icon Scale Animation */
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.icon-float {
+    animation: none;
+}
+
+/* Gradient Shift Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+}
+
+/* Line Draw Animation */
+@keyframes lineDraw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.line-draw {
+    stroke-dasharray: 1000;
+    animation: lineDraw 1.5s var(--ease-smooth) forwards;
+}
+
+/* =========================================
+   ACCESSIBILITY - REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

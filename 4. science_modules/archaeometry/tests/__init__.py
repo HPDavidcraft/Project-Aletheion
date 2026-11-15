@@ -1,0 +1,1 @@
+"""Archaeometry module tests."""

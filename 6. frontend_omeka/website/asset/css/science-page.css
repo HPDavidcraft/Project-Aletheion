@@ -1,0 +1,70 @@
+
+        .science-intro {
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            padding: 2rem 1rem 0;
+            text-align: center;
+        }
+
+        .science-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+            gap: 1rem;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .science-card {
+            display: block;
+            min-height: 190px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color, var(--pleroma-muted));
+            border-radius: 8px;
+            color: inherit;
+            text-decoration: none;
+            transition: transform 160ms ease, border-color 160ms ease;
+        }
+
+        .science-card:hover,
+        .science-card:focus-visible {
+            transform: translateY(-3px);
+            border-color: var(--accent-color, var(--pleroma-warm));
+        }
+
+        .science-card:focus-visible,
+        .skip-link:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 3px;
+        }
+
+        .science-card p {
+            margin-bottom: 0;
+        }
+
+        .integration-note {
+            max-width: 1120px;
+            margin: 1rem auto 3rem;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid var(--accent-color, var(--pleroma-warm));
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -4rem;
+            left: 1rem;
+            z-index: 1000;
+            padding: .75rem 1rem;
+            background: var(--pleroma-offwhite);
+            color: #111;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .science-card {
+                transition: none;
+            }
+        }

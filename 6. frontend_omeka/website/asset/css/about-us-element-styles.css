@@ -1,0 +1,85 @@
+/* Extracted per-element style declarations. */
+
+#pleroma-style-about-us-001 {
+  display: flex; gap: 2rem; margin-top: 2rem;
+}
+
+#pleroma-style-about-us-002 {
+  font-family:'Courier New'
+}
+
+#pleroma-style-about-us-003 {
+  font-family:'Courier New'
+}
+
+#pleroma-style-about-us-004 {
+  font-family:'Courier New'
+}
+
+#pleroma-style-about-us-005 {
+  font-family:'Courier New'
+}
+
+#pleroma-style-about-us-006 {
+  font-family:'Courier New'
+}
+
+#section_governance {
+  background-color: var(--pleroma-offwhite);
+}
+
+#pleroma-style-about-us-007 {
+  color: var(--accent-color); border-color: var(--accent-color);
+}
+
+#pleroma-style-about-us-008 {
+  border-top-color: var(--accent-color);
+}
+
+#pleroma-style-about-us-009 {
+  font-size: 0.8rem;
+}
+
+#pleroma-style-about-us-010 {
+  font-size: 0.8rem;
+}
+
+#pleroma-style-about-us-011 {
+  font-size: 0.8rem;
+}
+
+#pleroma-style-about-us-012 {
+  font-size: 0.8rem;
+}
+
+#pleroma-style-about-us-013 {
+  font-size: 0.8rem;
+}
+
+#pleroma-style-about-us-014 {
+  margin-top: 2rem;
+}
+
+#pleroma-style-about-us-015 {
+  margin-bottom: 0.5rem; font-size: 0.9rem;
+}
+
+#pleroma-style-about-us-016 {
+  margin-top: 1rem;
+}
+
+#pleroma-style-about-us-017 {
+  margin-bottom: 0.5rem; font-size: 0.9rem;
+}
+
+#pleroma-style-about-us-018 {
+  margin-top: 1rem;
+}
+
+#pleroma-style-about-us-019 {
+  margin-bottom: 0.5rem; font-size: 0.9rem;
+}
+
+#pleroma-style-about-us-020 {
+  filter: grayscale(100%);
+}

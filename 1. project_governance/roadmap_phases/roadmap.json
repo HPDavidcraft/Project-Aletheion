@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "source": "Pleroma_Guidelines_v1.0.pdf, sections 1.4 and 12",
+  "guideline_phase_at_version": "beta",
+  "progress_statuses": [
+    "not_assessed",
+    "in_progress",
+    "blocked",
+    "done"
+  ],
+  "phases": [
+    {
+      "id": "alpha",
+      "name": "Alpha — Foundations",
+      "platform": "Local Docker environment",
+      "milestones": [
+        {
+          "id": "postgres-schema",
+          "description": "Design and validate the PostgreSQL schema for all 22 data modules.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "cidoc-crm-suite",
+          "description": "Implement CIDOC CRM core, CRMarchaeo, CRMsci, CRMgeo, and CRMinf as PostgreSQL extensions and TTL ontology files.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "docker-compose-stack",
+          "description": "Stand up Docker Compose services for PostgreSQL/PostGIS, Directus, Apache Jena, MinIO, Cantaloupe, GeoServer, MeiliSearch, and FastAPI.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "api-validation",
+          "description": "Implement FastAPI validation for EDTF dates, Harris Matrix acyclicity, and geometry topology.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "skos-concept-schemes",
+          "description": "Populate controlled-vocabulary SKOS concept schemes, including the Getty AAT subset, material types, event types, and feature types.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "zotero-synchronization",
+          "description": "Establish the Zotero group library and test its synchronization job.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "jupyterhub-notebooks",
+          "description": "Configure local JupyterHub and test the Stratigraphy Builder and C14 Plotter notebooks with a synthetic dataset.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ],
+      "exit_criteria": [
+        {
+          "id": "all-modules-schema-complete",
+          "description": "All 22 data modules are schema-complete.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "ci-cd-operational",
+          "description": "The CI/CD pipeline is operational.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "id": "beta",
+      "name": "Beta — Testing on Omeka S",
+      "platform": "Hosted Omeka S; supporting services local or self-hosted",
+      "milestones": [
+        {
+          "id": "omeka-item-types",
+          "description": "Deploy Omeka S with custom Item Types mapped to Pleroma entity types using CIDOC CRM vocabulary.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "visualization-theme",
+          "description": "Develop the Aletheion Omeka S theme with Deep Map, Civilization Dashboard stub, and Climate Context sidebar.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "iiif-cantaloupe",
+          "description": "Develop and test the IIIF viewer module and Cantaloupe integration in Omeka S.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "initial-site-corpus",
+          "description": "Ingest at least five complete site hierarchies (site → periods → strata → finds), with records completeness-validated to the Gold trust-score standard.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "cross-module-navigation",
+          "description": "Test site → period → stratum → find → provenance and civilization → polity phase → ruler → events → battle navigation.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "agora-pilot",
+          "description": "Launch a limited Agora transcription pilot and test moderation and contribution workflows.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "user-feedback",
+          "description": "Collect structured user feedback and iterate on interface design and data-entry workflows.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "security-and-access-review",
+          "description": "Complete an authorized security assessment of FastAPI endpoints, review role-based access control, and verify Legal_Status export restrictions.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ],
+      "exit_criteria": [
+        {
+          "id": "beta-record-and-site-count",
+          "description": "At least 100 records exist across at least five site hierarchies.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "navigation-functional",
+          "description": "All specified navigation modules are functional.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "id": "release-v1",
+      "name": "Release v1.0 — Production Domain",
+      "platform": "Dedicated production domain and cloud infrastructure",
+      "milestones": [
+        {
+          "id": "production-domain",
+          "description": "Acquire project-aletheion.org and the Pleroma subdomain.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "kubernetes-production",
+          "description": "Deploy the full Kubernetes stack with TLS, CDN, and automated backups.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "literature-federation",
+          "description": "Activate SPARQL federation with the Literature Database and test cross-database motif queries end to end.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "researcher-jupyterhub",
+          "description": "Activate JupyterHub on Kubernetes for credentialed researcher access.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "published-api-documentation",
+          "description": "Publish REST API and SPARQL endpoint documentation.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "public-data-access",
+          "description": "Launch public access to published data through the REST API and SPARQL endpoint.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "initial-corpus-doi",
+          "description": "Publish the initial data corpus with a DOI through a recognized data repository.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "monitoring-and-response",
+          "description": "Activate Prometheus/Grafana monitoring and establish incident-response procedures.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ],
+      "exit_criteria": [
+        {
+          "id": "production-stack-deployed",
+          "description": "The full-stack production deployment is operational.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "federation-validated",
+          "description": "SPARQL federation is validated.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "public-launch",
+          "description": "Pleroma has launched publicly.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ]
+    },
+    {
+      "id": "post-release",
+      "name": "Post-Release Priorities",
+      "platform": "Production",
+      "milestones": [
+        {
+          "id": "regional-corpus-expansion",
+          "description": "Systematically ingest published excavation reports for priority regions.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "battle-tactical-map",
+          "description": "Implement the battle tactical map module with a phase slider.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "vr-site-exploration",
+          "description": "Develop the VR site exploration interface and photogrammetry model streaming.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "acoustic-and-sensory-reconstruction",
+          "description": "Activate acoustic simulation and sensory reconstruction features.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "literature-database",
+          "description": "Begin development of the Aletheion Literature Database as a federated sibling instance.",
+          "status": "not_assessed",
+          "evidence": ""
+        },
+        {
+          "id": "institutional-partnerships",
+          "description": "Pursue data-sharing partnerships with museums, research institutes, and national heritage bodies.",
+          "status": "not_assessed",
+          "evidence": ""
+        }
+      ],
+      "exit_criteria": []
+    }
+  ]
+}

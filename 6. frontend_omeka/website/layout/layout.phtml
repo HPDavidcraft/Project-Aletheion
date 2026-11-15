@@ -1,0 +1,62 @@
+<?php
+$escape = $this->plugin('escapeHtml');
+$siteTitle = $site->title();
+$this->headLink()->prependStylesheet($this->assetUrl('css/aletheion-components.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/aletheion-layout.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/theme-core.css'));
+// Inject OpenLayers & FontAwesome
+$this->headLink()->appendStylesheet('https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css');
+$this->headLink()->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+$this->headScript()->appendFile($this->assetUrl('js/main.js'));
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $escape($this->lang()); ?>">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php echo $this->headMeta(); ?>
+    <title><?php echo $escape($siteTitle); ?></title>
+    <?php echo $this->headLink(); ?>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Merriweather:wght@300;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <?php echo $this->headScript(); ?>
+</head>
+<body>
+    <!-- 1. DASHBOARD SIDEBAR -->
+    <header>
+        <h1><i class="fa-solid fa-layer-group"></i> ALETHEION</h1>
+        <nav>
+            <ul>
+                <!-- Dynamic Navigation -->
+                <?php foreach ($this->siteNavigation() as $nav): ?>
+                    <li>
+                        <a href="<?php echo $escape($nav->getHref()); ?>">
+                            <?php echo $escape($nav->getLabel()); ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+                
+                <!-- Hardcoded Aletheion Tools -->
+                <hr style="border-color: #333">
+                <li><a href="#deep-map-overlay" data-deep-map-toggle aria-controls="deep-map-overlay" aria-expanded="false"><i class="fa-solid fa-earth-americas"></i> Deep Map 4D</a></li>
+                <li><a href="/jupyter" target="_blank"><i class="fa-solid fa-flask"></i> Comp. Lab</a></li>
+            </ul>
+        </nav>
+        
+        <div style="margin-top: auto; color: #666; font-size: 0.8rem;">
+            <?php echo $escape($this->themeSetting('footer_text')); ?>
+        </div>
+    </header>
+
+    <!-- 2. MAIN VIEWPORT -->
+    <div id="content">
+        <?php echo $this->content; ?>
+    </div>
+
+    <!-- 3. HIDDEN OVERLAYS (For Deep Map) -->
+    <div id="deep-map-overlay" hidden tabindex="-1" aria-labelledby="deep-map-title">
+        <h2 id="deep-map-title">Deep Map 4D</h2>
+        <p>The map service is not configured in this deployment.</p>
+        <button type="button" data-deep-map-close>Close</button>
+    </div>
+</body>
+</html>

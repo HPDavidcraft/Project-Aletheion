@@ -1,0 +1,1 @@
+"""Spatial service tests."""

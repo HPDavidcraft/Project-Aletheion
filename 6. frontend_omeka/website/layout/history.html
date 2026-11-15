@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive fictional history demo for the PLEROMA Chronicle Engine.">
+  <title>Project Aletheion | History</title>
+  <link rel="stylesheet" href="../asset/css/theme-core.css">
+  <link rel="stylesheet" href="../asset/css/site-header.css">
+  <link rel="stylesheet" href="../asset/css/project-palette.css">
+  <link rel="stylesheet" href="../asset/css/history-page.css">
+</head>
+<body class="history-demo">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="alt_home.html" aria-label="Project Aletheion home">
+        <img src="../asset/img/Project_Aletheion.png" alt="Project Aletheion">
+      </a>
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="site-header__links">
+          <li><a href="alt_home.html"><img class="site-header__icon" src="../asset/img/home.png" alt="">Home</a></li>
+          <li><a href="about_us.html"><img class="site-header__icon" src="../asset/img/logo-top.png" alt="">About</a></li>
+          <li><a href="archaeology.html"><img class="site-header__icon" src="../asset/img/archeology.png" alt="">Archaeology</a></li>
+          <li><a href="history.html" aria-current="page"><img class="site-header__icon" src="../asset/img/history.png" alt="">History</a></li>
+          <li><a href="linguistics.html"><img class="site-header__icon" src="../asset/img/linguistics.png" alt="">Linguistics</a></li>
+          <li><a href="religion.html"><img class="site-header__icon" src="../asset/img/religion.png" alt="">Religion</a></li>
+          <li><a href="science.html"><img class="site-header__icon" src="../asset/img/science.png" alt="">Science</a></li>
+          <li><a href="society.html"><img class="site-header__icon" src="../asset/img/society.png" alt="">Society</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="history-hero" aria-labelledby="history-page-title">
+      <div>
+        <p class="eyebrow">PLEROMA · CHRONICLE ENGINE</p>
+        <h1 id="history-page-title">History is a set of arguments</h1>
+        <p>Follow regional narratives, site histories, events, people, and textual witnesses—while keeping the source, the interpretation, and the uncertainty visible.</p>
+        <div class="hero-actions">
+          <a class="history-button history-button--primary" href="#history-map">Open the time-aware atlas</a>
+          <button class="history-button history-button--secondary" type="button" id="history-export">Export filtered event fixtures</button>
+        </div>
+      </div>
+      <aside class="history-hero__note">
+        <span class="eyebrow">READING RULE</span>
+        <p>A discrete event is not an occupation period. A source is not an interpretation. Competing hypotheses remain visible.</p>
+      </aside>
+    </section>
+
+    <aside class="history-fiction-notice" role="note">
+      <strong>FICTIONAL DEMO DATA</strong>
+      <span>All regions, sites, polities, people, events, texts, dates, source citations, diplomatic links, and scores are invented interface fixtures. Nothing here describes actual history or constitutes a citable source, verified translation, real boundary, or scholarly conclusion.</span>
+    </aside>
+
+    <section class="history-overview history-section" aria-labelledby="history-overview-title">
+      <div class="history-section-heading">
+        <div>
+          <p class="eyebrow">CHRONICLE ENGINE SAMPLE</p>
+          <h2 id="history-overview-title">A linked historical corpus</h2>
+        </div>
+        <p>The fixture exercises the history and civilization entities from the guidelines. Its size does not represent a real or quality-assured corpus.</p>
+      </div>
+      <div class="history-metrics">
+        <article><strong id="metric-chronicles">—</strong><span>fictional regions</span></article>
+        <article><strong id="metric-events">—</strong><span>discrete event records</span></article>
+        <article><strong id="metric-records">—</strong><span>linked history records</span></article>
+        <article><strong id="metric-uncertain">—</strong><span>low-certainty assertions</span></article>
+      </div>
+      <p class="fixture-note">Five fictional Regional Chronicles anchor 115 generated records across regional surveys, interaction networks, site histories, events, civilization phases, people, text witnesses, and hypotheses.</p>
+    </section>
+
+    <section class="history-search history-section" id="history-search" aria-labelledby="history-search-title">
+      <div class="history-section-heading">
+        <div>
+          <p class="eyebrow">FACETED SEARCH · SOURCE CRITICISM</p>
+          <h2 id="history-search-title">Find a historical record</h2>
+        </div>
+        <p>Search across records and filter by chronicle, entity kind, event type, and debate status. Time labels retain EDTF alongside the display date.</p>
+      </div>
+      <form id="history-search-form" class="history-filter-grid">
+        <label class="history-field history-field--wide">
+          <span>Search names, arguments, IDs, sources, and narrative</span>
+          <input id="history-query" type="search" placeholder="Try a region, event, person, witness, or phrase">
+        </label>
+        <label class="history-field">
+          <span>Regional chronicle</span>
+          <select id="chronicle-filter"><option value="">All fictional regions</option></select>
+        </label>
+        <label class="history-field">
+          <span>Record type</span>
+          <select id="history-type-filter">
+            <option value="">All history records</option>
+            <option value="chronicle">Regional chronicle</option>
+            <option value="cluster">Cluster history</option>
+            <option value="siteHistory">Site history</option>
+            <option value="event">Historical event</option>
+            <option value="civilization">Civilization complex</option>
+            <option value="phase">Polity phase</option>
+            <option value="person">Historical person</option>
+            <option value="witness">Text witness</option>
+            <option value="hypothesis">Interpretation hypothesis</option>
+          </select>
+        </label>
+        <label class="history-field">
+          <span>Event kind</span>
+          <select id="event-type-filter"><option value="">All event types</option></select>
+        </label>
+        <label class="history-field">
+          <span>Source type</span>
+          <select id="source-type-filter">
+            <option value="">All source types</option>
+            <option value="primary_source">Primary source</option>
+            <option value="synthesis">Synthesis</option>
+            <option value="database_record">Database record</option>
+            <option value="personal_communication">Personal communication</option>
+          </select>
+        </label>
+        <label class="history-field">
+          <span>Hypothesis status</span>
+          <select id="resolution-filter">
+            <option value="">All resolution tags</option>
+            <option value="consensus">Consensus</option>
+            <option value="minority">Minority</option>
+            <option value="contested">Contested</option>
+            <option value="superseded">Superseded</option>
+            <option value="refuted">Refuted</option>
+          </select>
+        </label>
+        <label class="history-field">
+          <span>Sort results</span>
+          <select id="history-sort">
+            <option value="relevance">Record type / relevance</option>
+            <option value="date">Oldest first</option>
+            <option value="trust">Demo trust preview</option>
+            <option value="name">Name / identifier</option>
+          </select>
+        </label>
+        <label class="history-check">
+          <input id="low-certainty-filter" type="checkbox">
+          <span>Only low-certainty assertions (&lt; 0.50)</span>
+        </label>
+        <div class="history-search-actions">
+          <button class="history-button history-button--primary" type="submit">Search records</button>
+          <button class="history-button history-button--quiet" type="reset">Reset</button>
+        </div>
+      </form>
+      <div class="popular-threads">
+        <span>Debate threads</span>
+        <div id="thread-shortcuts"></div>
+      </div>
+    </section>
+
+    <section class="history-dashboard history-section" id="history-map" aria-labelledby="atlas-title">
+      <div class="history-section-heading">
+        <div>
+          <p class="eyebrow">TIME-AWARE ATLAS · CIVILIZATION DASHBOARD</p>
+          <h2 id="atlas-title">Place events in changing contexts</h2>
+        </div>
+        <p>Scrubbing time updates the active polity phase, ruler, capital, event timeline, site list, diplomacy, and schematic layer labels together.</p>
+      </div>
+
+      <div class="atlas-controls">
+        <label class="history-field">
+          <span>Map context</span>
+          <select id="map-context">
+            <option value="regional">Regional Chronicle</option>
+            <option value="civilization">Civilization Complex</option>
+            <option value="site">Site History</option>
+            <option value="event">Historical Event</option>
+          </select>
+        </label>
+        <label class="history-field">
+          <span>Active chronicle</span>
+          <select id="atlas-chronicle"></select>
+        </label>
+        <label class="history-field">
+          <span>Chronology set (display only)</span>
+          <select id="history-chronology-set">
+            <option value="baseline">Baseline fixture · offset 0</option>
+            <option value="high">High chronology fixture · +50 years</option>
+            <option value="low">Low chronology fixture · −50 years</option>
+          </select>
+        </label>
+      </div>
+      <div class="history-time-control">
+        <div><label for="history-time-scrubber">Global time-scrubber</label><output id="history-time-output" for="history-time-scrubber">—</output></div>
+        <input id="history-time-scrubber" type="range" min="-4200" max="-1500" step="50" value="-3500">
+        <p>Shifts are applied to display only; canonical EDTF expressions remain unchanged. The polygons below are schematic and do not morph as real GIS geometry.</p>
+      </div>
+
+      <div class="history-atlas-grid">
+        <article class="atlas-map-card">
+          <div class="atlas-title-row">
+            <div><span class="atlas-state-label" id="atlas-state-label">Regional_Chronicle</span><h3 id="atlas-map-title">Loading chronicle…</h3></div>
+            <p id="atlas-state-description" aria-live="polite"></p>
+          </div>
+          <div class="atlas-map-frame">
+            <svg id="history-map-svg" viewBox="0 0 920 500" role="img" aria-labelledby="history-map-svg-title history-map-svg-desc">
+              <title id="history-map-svg-title">Fictional chronicle map</title>
+              <desc id="history-map-svg-desc">A schematic map of fictional regions and events; not a geographic dataset.</desc>
+              <defs>
+                <pattern id="history-grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" class="history-grid-line"></path></pattern>
+                <marker id="network-arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 Z" class="network-arrowhead"></path></marker>
+              </defs>
+              <rect class="atlas-ground" width="920" height="500"></rect>
+              <rect width="920" height="500" fill="url(#history-grid)"></rect>
+              <g id="history-map-layer"></g>
+            </svg>
+          </div>
+          <div class="atlas-map-legend">
+            <span><i class="legend-dot legend-dot--regional"></i>Chronicle boundary</span>
+            <span><i class="legend-dot legend-dot--site"></i>Site / capital</span>
+            <span><i class="legend-diamond"></i>Event</span>
+            <span><i class="legend-battle legend-battle--victory"></i>Battle: victory</span>
+            <span><i class="legend-battle legend-battle--defeat"></i>Battle: defeat</span>
+            <span><i class="legend-battle legend-battle--inconclusive"></i>Battle: inconclusive</span>
+          </div>
+          <div class="atlas-layer-readout">
+            <div><span>Base layer</span><strong id="atlas-base-layer">—</strong></div>
+            <div><span>Primary overlay</span><strong id="atlas-primary-layer">—</strong></div>
+            <div><span>Secondary overlay</span><strong id="atlas-secondary-layer">—</strong></div>
+          </div>
+          <p class="fixture-note">All geometry is local SVG drawing data. OGC polygons, climate rasters, GeoServer, event coordinates, and time-dependent geometry services are not connected.</p>
+        </article>
+
+        <aside class="civilization-sidebar">
+          <article class="dashboard-card">
+            <p class="eyebrow">ACTIVE POLITY PHASE</p>
+            <h3 id="phase-title">—</h3>
+            <p id="phase-summary"></p>
+            <dl class="compact-facts">
+              <div><dt>Ruler</dt><dd id="ruler-panel">—</dd></div>
+              <div><dt>Capital site</dt><dd id="capital-panel">—</dd></div>
+              <div><dt>Time span</dt><dd id="phase-date">—</dd></div>
+            </dl>
+          </article>
+          <article class="dashboard-card">
+            <p class="eyebrow">VISIBLE SITES</p>
+            <h3>Active site list</h3>
+            <ul id="active-sites-list" class="active-sites-list"></ul>
+          </article>
+          <article class="dashboard-card">
+            <p class="eyebrow">EVENT-DERIVED</p>
+            <h3>Diplomatic status</h3>
+            <div class="diplomacy-table-wrap">
+              <table class="diplomacy-table">
+                <thead><tr><th>Polity pair</th><th>Status</th><th>Evidence fixture</th></tr></thead>
+                <tbody id="diplomacy-rows"></tbody>
+              </table>
+            </div>
+          </article>
+        </aside>
+      </div>
+
+      <div class="history-charts-grid">
+        <article class="dashboard-card">
+          <p class="eyebrow">SYNTHETIC SIDEBAR CHART</p><h3>Haplogroup fixture</h3>
+          <svg id="haplogroup-chart" viewBox="0 0 420 150" role="img" aria-label="Invented haplogroup demonstration chart"><g></g></svg>
+        </article>
+        <article class="dashboard-card">
+          <p class="eyebrow">SYNTHETIC SIDEBAR CHART</p><h3>Language-zone coverage</h3>
+          <svg id="language-chart" viewBox="0 0 420 150" role="img" aria-label="Invented language coverage demonstration chart"><g></g></svg>
+        </article>
+        <article class="dashboard-card">
+          <p class="eyebrow">SYNTHETIC SIDEBAR CHART</p><h3>Commodity-flow summary</h3>
+          <svg id="commodity-chart" viewBox="0 0 420 150" role="img" aria-label="Invented commodity flow demonstration chart"><g></g></svg>
+        </article>
+      </div>
+      <p class="chart-disclaimer">These charts change with the selected period but contain invented numbers, not haplogroup, language, or trade findings.</p>
+
+      <div class="timeline-panel">
+        <div class="timeline-panel__heading"><div><p class="eyebrow">DISCRETE EVENTS</p><h3>Chronicle timeline</h3></div><p id="timeline-summary" aria-live="polite"></p></div>
+        <div id="history-timeline" class="history-timeline" role="list" aria-label="Events around the selected time"></div>
+      </div>
+    </section>
+
+    <section class="history-results history-section" aria-labelledby="history-results-title">
+      <div class="history-section-heading">
+        <div><p class="eyebrow">NARRATIVE + EVIDENCE LINKS</p><h2 id="history-results-title">Browse matching records</h2></div>
+        <p id="history-results-summary" aria-live="polite">Loading fixture records…</p>
+      </div>
+      <div class="history-results-grid">
+        <div>
+          <div id="history-results" class="history-result-list"></div>
+          <div class="history-pagination">
+            <p id="history-page-status" aria-live="polite"></p>
+            <div><button class="history-button history-button--quiet" id="history-page-prev" type="button">Previous</button><button class="history-button history-button--quiet" id="history-page-next" type="button">Next</button></div>
+          </div>
+          <p id="history-export-status" class="history-status" role="status" aria-live="polite"></p>
+        </div>
+        <aside class="record-inspector-card">
+          <div class="inspector-heading"><div><p class="eyebrow">SELECTED RECORD</p><h3 id="history-inspector-title">Record inspector</h3></div><span id="history-trust-badge" class="trust-badge">—</span></div>
+          <div id="history-inspector"><p>Select a result or timeline point to inspect it.</p></div>
+          <button type="button" class="history-button history-button--secondary" id="test-publication-gate">Test publication gate</button>
+          <p id="publication-gate-status" class="history-status" role="status" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="history-networks history-section" aria-labelledby="network-title">
+      <div class="history-section-heading">
+        <div><p class="eyebrow">CLUSTER_HISTORY · GRAPH QUERIES</p><h2 id="network-title">Explore interaction networks</h2></div>
+        <p>Discover neighbors, calculate degree centrality, and find a shortest path in a fictional site network. A route is a graph relation, not proof of contact.</p>
+      </div>
+      <div class="network-controls">
+        <label class="history-field"><span>Cluster history</span><select id="cluster-select"></select></label>
+        <label class="history-field"><span>Path from site</span><select id="network-start"></select></label>
+        <label class="history-field"><span>Path to site</span><select id="network-end"></select></label>
+        <button type="button" id="network-query" class="history-button history-button--primary">Find shortest path</button>
+      </div>
+      <div class="network-workspace">
+        <svg id="network-svg" viewBox="0 0 720 300" role="img" aria-label="Synthetic site interaction network"><g id="network-layer"></g></svg>
+        <div class="network-results">
+          <h3>Graph query output</h3>
+          <p id="network-output" aria-live="polite"></p>
+          <ul id="network-neighbors"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="source-criticism history-section" aria-labelledby="witness-title">
+      <div class="history-section-heading">
+        <div><p class="eyebrow">TEXT_WITNESS · VARIANT READINGS</p><h2 id="witness-title">Compare textual witnesses</h2></div>
+        <p>Witness dates, scripts, languages, variant readings, and interpolations are kept explicit. The comparison is an illustrative HTML diff; no manuscript is represented.</p>
+      </div>
+      <div class="witness-controls">
+        <label class="history-field"><span>Witness A</span><select id="witness-a"></select></label>
+        <label class="history-field"><span>Witness B</span><select id="witness-b"></select></label>
+        <button type="button" id="compare-witnesses" class="history-button history-button--primary">Compare witnesses</button>
+      </div>
+      <div id="witness-metadata" class="witness-metadata"></div>
+      <div class="text-diff-card"><h3>Variant comparison</h3><div id="witness-diff" class="witness-diff" aria-live="polite"></div></div>
+    </section>
+
+    <section class="debate-section history-section" aria-labelledby="debate-title">
+      <div class="history-section-heading">
+        <div><p class="eyebrow">INTERPRETATION_HYPOTHESIS · OPPOSITION GRAPH</p><h2 id="debate-title">Keep competing readings in view</h2></div>
+        <p>Resolution tags qualify a debate; the fixture consensus indicator is not an automatic verdict or scholarly consensus.</p>
+      </div>
+      <div class="debate-workspace">
+        <div id="hypothesis-list" class="hypothesis-list"></div>
+        <article class="hypothesis-graph-card"><h3>Support / opposition links</h3><svg id="hypothesis-graph" viewBox="0 0 640 260" role="img" aria-label="Synthetic hypothesis opposition graph"><g id="hypothesis-graph-layer"></g></svg><p id="hypothesis-status" aria-live="polite"></p></article>
+      </div>
+    </section>
+
+    <section class="history-requirements history-section" aria-labelledby="history-requirements-title">
+      <div class="history-section-heading">
+        <div><p class="eyebrow">PRODUCTION READINESS</p><h2 id="history-requirements-title">What must be wired for real research use</h2></div>
+        <p>The page works as a client-side demonstration. It is not connected to the database, publishing workflow, or external research services.</p>
+      </div>
+      <div class="requirements-grid">
+        <article><h3>Canonical records &amp; validation</h3><p>PostGIS chronicle/phase geometry, EDTF parsing and range consistency, event description/interpretation/analysis publication gate, server-side bibliography requirements, and append-only editorial audit.</p></article>
+        <article><h3>References, media &amp; people</h3><p>Verified Zotero UUIDs and link-level citation metadata; rights-cleared IIIF galleries; SKOS roles; real person/event/witness associations; Glottolog codes and validated textual witness identifiers.</p></article>
+        <article><h3>Spatial, temporal &amp; network services</h3><p>GeoServer/OGC climate and polity layers, true time-indexed polygon geometry, spatial and temporal queries, graph traversal, and server-derived ruler, diplomatic, and chart data.</p></article>
+        <article><h3>Source criticism &amp; debate</h3><p>Text-witness persistence and IIIF annotation versions, verified supporting/opposing citations, moderated interpretation workflows, and consensus indicators derived from traceable evidence.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="history-footer">
+    <div><strong>Project Aletheion · PLEROMA</strong><p>Chronicle Engine demonstration · Synthetic history data only</p></div>
+    <nav aria-label="Footer navigation">
+      <a href="alt_home.html">Home</a><a href="about_us.html">About</a><a href="archaeology.html">Archaeology</a><a href="history.html">History</a><a href="linguistics.html">Linguistics</a><a href="religion.html">Religion</a><a href="science.html">Science</a><a href="society.html">Society</a>
+    </nav>
+  </footer>
+
+  <script src="../asset/js/archaeology-demo-data.js"></script>
+  <script src="../asset/js/history-demo-data.js"></script>
+  <script src="../asset/js/history-page.js"></script>
+</body>
+</html>
